@@ -14,9 +14,9 @@ class CreatePengaduanTable extends Migration
     {
         Schema::create('pengaduan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password', 60);
+            $table->string('id_user');
+            $table->string('id_kategori');
+            $table->string('isi');
             $table->rememberToken();
             $table->timestamps();
         });

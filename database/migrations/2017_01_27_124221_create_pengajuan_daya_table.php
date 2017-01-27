@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdminTable extends Migration
+class CreatePengajuanDayaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,12 @@ class CreateAdminTable extends Migration
      */
     public function up()
     {
-        Schema::create('Admin', function (Blueprint $table) {
+        //perintah membuat tabel dengan berbagai macam field
+        Schema::create('pengajuan_daya', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_lengkap');
-            $table->string('username');
-            $table->string('password', 60);
+            $table->string('id_user');
+            $table->string('peruntukan');
+            $table->string('daya');
             $table->rememberToken();
             $table->timestamps();
         });

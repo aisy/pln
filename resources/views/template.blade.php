@@ -42,7 +42,7 @@
             </a>
 
             <ul class="dropdown-menu">
-             <li><a href="{{ url('keluhan') }}"><i class="fa fa-list-alt"></i> Keluhan</a></li>
+             <li><a href="{{ url('keluhan') }}"><i class="fa fa-list-alt"></i> Pengaduan Keluhan</a></li>
              <li><a href="{{ url('ubah-daya') }} "><i class="fa fa-flash"></i> Ubah Daya</a></li>
              <li><a href="{{ url('pasang-baru') }} "><i class="fa fa-wrench"></i> Pasang Baru</a></li>
              {{-- <li><a href="{{ url('pemutusan') }}"><i class="fa fa-plug"></i> Pemutusan</a></li> --}}
