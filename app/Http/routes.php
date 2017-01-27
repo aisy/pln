@@ -37,9 +37,9 @@ Route::get('pasang-baru', function (){
 
 // ADMIN
 Route::get('administrator/', function (){
-	return view('ubah_daya/index');
+	return view('admin/admin_template');
 });
 
-Route::get('administrator/', function (){
-	return view('ubah_daya/index');
-});
+// Route::get('administrator/', function (){
+// 	return view('ubah_daya/index');
+// });
