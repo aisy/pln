@@ -11,3 +11,4 @@ class Admin extends Model
     //field yang bisa di isi
     protected $fillable = ['nama_lengkap', 'username', 'password'];
 }
+

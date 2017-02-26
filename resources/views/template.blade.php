@@ -2,80 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="icon" href="/favicon.ico">
 
   <title>PLN</title>
 
   <!-- CSS -->
-  <link href="{{ URL::to('bower_components/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ URL::to('bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-  <link href="{{ URL::to('bower_components/style.min.css') }}" rel="stylesheet">
-
+  <link href="{{ URL::to('bower_components/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ URL::to('bower_components/css/mdb.css') }}" rel="stylesheet">
+  <link href="{{ URL::to('bower_components/css/style.css') }}" rel="stylesheet">
+  
 </head>
 
-<body style="margin-top: 50px">
+<body class="blue-skin">
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#"><i class="fa fa-flash"></i> PLN</a>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse">
+  <!--Navigation & Intro-->
+  <header>
 
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="{{ url('halaman-utama') }}"><i class="fa fa-home"></i> Halaman utama</a></li>
-          
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-handshake-o"></i> Layanan <b class="caret"></b>
-            </a>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
 
-            <ul class="dropdown-menu">
-             <li><a href="{{ url('keluhan') }}"><i class="fa fa-list-alt"></i> Pengaduan Keluhan</a></li>
-             <li><a href="{{ url('ubah-daya') }} "><i class="fa fa-flash"></i> Ubah Daya</a></li>
-             <li><a href="{{ url('pasang-baru') }} "><i class="fa fa-wrench"></i> Pasang Baru</a></li>
-             {{-- <li><a href="{{ url('pemutusan') }}"><i class="fa fa-plug"></i> Pemutusan</a></li> --}}
-           </ul>
-         </li>
+      <!-- Collapse button-->
+      <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+      <i class="fa fa-bars"></i></button>
 
-       </ul>
+      <div class="container">
 
-       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href=""><i class="fa fa-user-circle-o"></i> Profil</a></li>
-            <li><a href="#contact"><i class="fa fa-edit"></i> Ubah Profil</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href=""><i class="fa fa-sign-out"></i>Keluar </a></li>
+        <!--Collapse content-->
+        <div class="collapse navbar-toggleable-xs" id="collapseEx">
+          <!--Navbar Brand-->
+          <a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">PLN</a>
+          <!--Links-->
+          <ul class="nav navbar-nav smooth-scroll">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Halaman Utama <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#best-features">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#examples-of-use">Examples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#our-team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
           </ul>
-        </li>
-      </ul>
 
-    </div><!--/.nav-collapse -->
+          <!--Navbar icons-->
+          <ul class="nav navbar-nav nav-flex-icons">
+            <li class="nav-item wow fadeIn" data-wow-delay="0.2s">
+              <a class="nav-link"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li class="nav-item wow fadeIn" data-wow-delay="0.3s">
+              <a class="nav-link"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="nav-item wow fadeIn" data-wow-delay="0.4s">
+              <a class="nav-link"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+
+        </div>
+        <!--/.Collapse content-->
+
+      </div>
+
+    </nav>
+    <!--/.Navbar-->
+
+    @yield('header')
+
+  </header>
+  <!--/Navigation & Intro-->
+
+<main>
+  <div class="container">
+  @yield('konten1')
+  @yield('konten2')
+  @yield('konten3')
   </div>
-</nav>
+</main>
 
-@yield('konten1')
-@yield('konten2')
-@yield('konten3')
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ URL::to('bower_components/jquery/jquery.min.js') }}"></script>
-    <script src="{{ URL::to('bower_components/bootstrap/js/bootstrap.min.js') }}"></script>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="{{ URL::to('bower_components/js/jquery-3.1.1.min.js') }}"></script>
+  <script src="{{ URL::to('bower_components/js/bootstrap.js') }}"></script>
+  <script src="{{ URL::to('bower_components/js/mdb.js') }}"></script>
   </body>
   </html>
