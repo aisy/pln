@@ -4,21 +4,18 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="icon" href="/favicon.ico">
 
     <title>PLN - Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::to('bower_components/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Custom CSS -->
     <link href="{{ URL::to('bower_components/sb-admin-2.min.css') }}" rel="stylesheet">
-
     <link href="{{ URL::to('bower_components/metisMenu.min.css') }}" rel="stylesheet">
-
-    <link href="{{ URL::to('bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ URL::to('bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -190,13 +187,13 @@
                 </div>
             </div>
             <!-- /.row -->
-            
+
             <script src="{{ URL::to('bower_components/jquery/jquery.min.js') }}"></script>
             <script src="{{ URL::to('bower_components/bootstrap/js/bootstrap.min.js') }}"></script>
             <script src="{{ URL::to('bower_components/bootstrap/js/metisMenu.min.js')}}"></script>
             <script src="{{ URL::to('bower_components/bootstrap/js/sb-admin-2.js')}}"></script>
-            
 
-        </body>
 
-        </html>
+</body>
+
+</html>

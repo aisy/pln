@@ -23,6 +23,11 @@ header,
 }
 /*Intro*/
 
+main {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
 .view {
     background: url("../img/picture1vmb.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -54,6 +59,15 @@ header,
         max-height: 400px;
     }
 }
+
+.sidebar-heading {
+    padding: 0.5rem;
+    /*text-transform: uppercase;*/
+    font-size: 1.2rem;
+    margin-top: -1.7rem;
+    margin-bottom: 1.7rem;
+}
+
 /*Footer*/
 
 .page-footer {

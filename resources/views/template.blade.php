@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +14,7 @@
   <link href="{{ URL::to('bower_components/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ URL::to('bower_components/css/mdb.css') }}" rel="stylesheet">
   <link href="{{ URL::to('bower_components/css/style.css') }}" rel="stylesheet">
-  
+
 </head>
 
 <body class="blue-skin">
@@ -37,25 +38,18 @@
           <!--Links-->
           <ul class="nav navbar-nav smooth-scroll">
             <li class="nav-item">
-              <a class="nav-link" href="#home">Halaman Utama <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#home"><i class="fa fa-home"></i> Halaman Utama <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle waves-effect waves-light" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="true"><i class="fa fa-flash"></i> Layanan Daya Listrik</a>
+                <div class="dropdown-menu dropdown-primary dd-center" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                  <a class="dropdown-item waves-effect waves-light" href="#">Pengajuan Daya</a>
+                  <a class="dropdown-item waves-effect waves-light" href="#">Ubah Daya</a>
+                </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#best-features">Layanan</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#examples-of-use">Examples</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#testimonials">Testimonials</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pricing">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#our-team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="#home"><i class="fa fa-comments"></i> Pengaduan<span class="sr-only">(current)</span></a>
             </li>
           </ul>
 
@@ -85,13 +79,13 @@
   </header>
   <!--/Navigation & Intro-->
 
-<main>
-  <div class="container">
-  @yield('konten1')
-  @yield('konten2')
-  @yield('konten3')
-  </div>
-</main>
+  <main>
+    <div class="container">
+      @yield('konten1')
+      @yield('konten2')
+      @yield('konten3')
+    </div>
+  </main>
 
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -99,5 +93,6 @@
   <script src="{{ URL::to('bower_components/js/jquery-3.1.1.min.js') }}"></script>
   <script src="{{ URL::to('bower_components/js/bootstrap.js') }}"></script>
   <script src="{{ URL::to('bower_components/js/mdb.js') }}"></script>
-  </body>
-  </html>
+</body>
+
+</html>
