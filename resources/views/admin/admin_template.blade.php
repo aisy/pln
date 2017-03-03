@@ -16,7 +16,7 @@
     <link href="{{ URL::to('bower_components/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('bower_components/metisMenu.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-
+    
 </head>
 
 <body>

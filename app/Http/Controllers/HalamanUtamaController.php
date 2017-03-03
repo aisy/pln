@@ -3,28 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Pengajuan_daya as Pengajuan;
-use App\Kategori_masalah as Kategori;
+use App\Berita as Berita;
 
 use View;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class pengajuanDayaController extends Controller
+class HalamanUtamaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        $kategori = Kategori::all();
+    public function index(){
 
-        return View::make('pemasangan/index', compact('kategori'));
+        // $news      = Berita::find();
+        $more_news = Berita::paginate(5);
+        // return View::make('pemasangan', compact('more_news'));
+
+        return View::make('halaman_awal/index', compact('more_news'));
     }
 
     /**

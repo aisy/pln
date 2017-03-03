@@ -18,7 +18,6 @@ class CreateUbahDayaTable extends Migration
             $table->string('id_user');
             $table->string('peruntukan');
             $table->string('daya');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

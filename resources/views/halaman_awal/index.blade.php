@@ -25,10 +25,12 @@
 					<!--Second column-->
 					<div class="col-lg-4 offset-lg-1 flex-center">
 						<!--Form-->
-						<img src="{{ URL::to('bower_components/img/Asset3.png') }}" alt="" class="img-fluid wow fadeInRight" id="app-mockup">
+						<img src="{{ URL::asset('bower_components/img/Asset3.png') }}" alt="" class="img-fluid wow fadeInRight" id="app-mockup">
 						<!--/.Form-->
+
 					</div>
 					<!--/Second column-->
+
 				</div>
 			</div>
 		</div>
@@ -70,86 +72,41 @@
 				</div>
 				<!--/Featured news-->
 
-				<!--Small news-->
-				<div class="single-news">
+				@foreach ($more_news as $key)
+					<!--Small news-->
+					<div class="single-news">
 
-					<div class="row">
-						<div class="col-md-3">
+						<div class="row">
+							<div class="col-md-3">
 
-							<!--Image-->
-							<div class="view overlay hm-white-slight">
-								<img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(82).jpg">
-								<a>
-									<div class="mask"></div>
+								<!--Image-->
+								<div class="view overlay hm-white-slight">
+									<img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(82).jpg">
+									<a>
+										<div class="mask"></div>
+									</a>
+								</div>
+							</div>
+
+							<!--Excerpt-->
+							<div class="col-md-9">
+								<p><strong>{{ $key['judul'] }}</strong></p>
+								<a>{{ $key['isi'] }}
+									<i class="fa fa-angle-right"></i>
 								</a>
 							</div>
-						</div>
 
-						<!--Excerpt-->
-						<div class="col-md-9">
-							<p><strong>19/08/2016</strong></p>
-							<a>A journey through the woods.
-								<i class="fa fa-angle-right"></i>
-							</a>
 						</div>
-
 					</div>
+					<!--/Small news-->
+				@endforeach
+
+
+				<div class="text-xs-center">
+					<button type="button" class="btn btn-default text-xs-center">
+							<i class="fa fa-list-ol"></i> Lihat Selengkapnya
+					</button>
 				</div>
-				<!--/Small news-->
-
-				<!--Small news-->
-				<div class="single-news">
-
-					<div class="row">
-						<div class="col-md-3">
-
-							<!--Image-->
-							<div class="view overlay hm-white-slight">
-								<img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(69).jpg">
-								<a>
-									<div class="mask"></div>
-								</a>
-							</div>
-						</div>
-
-						<!--Excerpt-->
-						<div class="col-md-9">
-							<p><strong>18/08/2016</strong></p>
-							<a>How to start surfing in Hawaii?
-								<i class="fa fa-angle-right"></i>
-							</a>
-						</div>
-
-					</div>
-				</div>
-				<!--/Small news-->
-
-				<!--Small news-->
-				<div class="single-news">
-
-					<div class="row">
-						<div class="col-md-3">
-
-							<!--Image-->
-							<div class="view overlay hm-white-slight">
-								<img src="https://mdbootstrap.com/img/Photos/Horizontal/City/6-col/img%20(25).jpg">
-								<a>
-									<div class="mask"></div>
-								</a>
-							</div>
-						</div>
-
-						<!--Excerpt-->
-						<div class="col-md-9">
-							<p><strong>17/08/2016</strong></p>
-							<a>7 reasons why you need to see San Francisco.
-								<i class="fa fa-angle-right"></i>
-							</a>
-						</div>
-
-					</div>
-				</div>
-				<!--/Small news-->
 
 			</div>
 			<!--/First column-->
@@ -179,10 +136,4 @@
 
 	</section>
 	<!--/Section: Magazine v.1-->
-
-
-@stop
-
-@section('konten2')
-
 @stop

@@ -1,51 +1,59 @@
 @extends('template')
 
+@section('header_class')
+	normal-header
+@endsection
+
 @section('konten1')
 
-<div class="container">
-	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-		<div class="page-header">
-			<h3><i class="fa fa-newspaper-o"></i> Keluhan</h3>
-		</div>
+	@section('konten1')
+		<section class="section">
+			<!--Second column-->
+			<!--Section heading-->
+			<h1 class="section-heading wow fadeIn" data-wow-delay="0.2s">Pengaduan</h1>
+			<!--Section description-->
 
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<form action="" method="POST" role="form">
-					<legend>Form Keluhan</legend>
-				
-					<div class="form-group">
-						<select name="kategori" id="inputKategori" class="form-control">
-							<option value="">Pilih Kategori Permasalahan</option>
-							@for ($i = 1; $i<=10 ; $i++)
-								<option value="">Kategori {{ $i }}</option>
-							@endfor
-						</select>
+			<p class="section-description wow fadeIn" data-wow-delay="0.4s">Punya Masalah dengan layanan kami? silahkan laporkan keluhan anda di sini</p>
+
+			<div class="col-lg-6 push-md-3">
+				<!--Form-->
+
+				<div class="card wow fadeInLeft">
+					<div class="card-block">
+						<!--Header-->
+						<div class="text-xs-center">
+							<h3><i class="fa fa-comments"></i> Pengaduan</h3>
+							<hr>
+						</div>
+
+						<!--Body-->
+
+							<div class="md-form">
+								<!--Blue select-->
+								<select class="mdb-select colorful-select dropdown-primary">
+									<option value="">Jenis Keluhan</option>
+									@foreach ($kategori as $key)
+										<option value="{{ $key['id'] }}">
+											{{ $key['nama_kategori'] }}
+										</option>
+									@endforeach
+								</select>
+								<!--/Blue select-->
+							</div>
+
+							<div class="md-form">
+								<textarea type="text" class="md-textarea" placeholder="keluhan"></textarea>
+						</div>
+
+						<div class="text-xs-center">
+							<button class="btn btn-ins btn-lg">Sign up</button>
+						</div>
+
 					</div>
-					
-					<div class="form-group">
-						<label for="">Pemasalahan</label>
-						<textarea name="permasalahan" class="form-control" placeholder="Deskripsikan Masalah Anda disini..." rows="3"></textarea>
-						{{-- <input type="text" class="form-control" id="" placeholder="Input field"> --}}
-					</div>
-				
-					<button type="submit" class="btn btn-success">Kirim Keluhan</button>
-				</form>
+				<!--/.Form-->
 			</div>
-		</div>
-		
+			<!--/Second column-->
+		</section>
+	@endsection
 
-	</div>
-
-	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<div class="page-header">
-			<h3><i class="fa fa-handshake-o"></i> Layanan</h3>
-		</div>
-
-		<div class="list-group">
-			<a href="#" class="list-group-item active">Item 1</a>
-			<a href="#" class="list-group-item">Item 2</a>
-			<a href="#" class="list-group-item">Item 3</a>
-		</div>
-	</div>
-</div>
 @stop

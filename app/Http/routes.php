@@ -12,27 +12,33 @@
 */
 
 
-// USER
+// =============================================================================
+// HALAMAN UTAMA
+// =============================================================================
+Route::resource('/', 'HalamanUtamaController');
+Route::resource('halaman-utama', 'HalamanUtamaController');
 
-Route::get('/', function (){
-    return view('halaman_awal/index');
-});
+// =============================================================================
+//  PENGADUAN
+// =============================================================================
+Route::resource('pengaduan', 'PengaduanController');
 
-Route::get('/halaman-utama', function (){
-    return view('halaman_awal/index');
-});
+// =============================================================================
+// PASANG DAYA
+// =============================================================================
+Route::resource('pasang-daya', 'PengajuanDayaController');
+Route::post('pasang-daya', 'PengajuanDayaController@create');
 
-Route::get('keluhan', function (){
-	return view('pengaduan/index');
-});
+// =============================================================================
+// ADMIN
+// =============================================================================
+
+
 
 Route::get('ubah-daya', function (){
 	return view('ubah_daya/index');
 });
 
-Route::get('pasang-baru', function (){
-	return view('pemasangan/index');
-});
 
 
 // ADMIN

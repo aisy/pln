@@ -17,7 +17,6 @@ class CreateKomentarTable extends Migration
             $table->string('id_berita');
             $table->string('komentar');
             // $table->string('password', 60);
-            $table->rememberToken();
             $table->timestamps();
         });
     }

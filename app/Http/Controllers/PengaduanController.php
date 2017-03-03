@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pengaduan as Pengaduan;
+
+use View;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,9 +17,11 @@ class PengaduanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         //
+
+      return View::make('pengaduan/index');
+
     }
 
     /**

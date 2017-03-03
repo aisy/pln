@@ -15,7 +15,6 @@ class CreateKategoriPermasalahanTable extends Migration
          Schema::create('Kategori_permasalahan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_kategori');
-            $table->rememberToken();
             $table->timestamps();
         });
     }
