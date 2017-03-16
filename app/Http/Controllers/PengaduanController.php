@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pengaduan as Pengaduan;
+use App\Kategori_masalah as Kategori;
 
 use View;
 
@@ -19,8 +20,8 @@ class PengaduanController extends Controller
      */
     public function index(){
         //
-
-      return View::make('pengaduan/index');
+      $kategori = Kategori::all();
+      return View::make('pengaduan/index', compact('kategori'));
 
     }
 
@@ -29,9 +30,10 @@ class PengaduanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $request){
+        $data = $request->all();
+        Pengaduan::create($data);
+        return redirect('pengaduan');
     }
 
     /**
@@ -54,6 +56,7 @@ class PengaduanController extends Controller
     public function show($id)
     {
         //
+        Pengaduan::find($id);
     }
 
     /**
@@ -65,6 +68,7 @@ class PengaduanController extends Controller
     public function edit($id)
     {
         //
+        $data = Pengaduan::find($id);
     }
 
     /**
@@ -77,6 +81,8 @@ class PengaduanController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $patch  = $request->all();
+        $update = Pengaduan::find($id)->update($patch);
     }
 
     /**
@@ -88,5 +94,6 @@ class PengaduanController extends Controller
     public function destroy($id)
     {
         //
+        Pengaduan::find($id)->delete();
     }
 }

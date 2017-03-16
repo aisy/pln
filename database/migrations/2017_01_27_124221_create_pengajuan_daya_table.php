@@ -15,17 +15,17 @@ class CreatePengajuanDayaTable extends Migration
         //perintah membuat tabel dengan berbagai macam field
         Schema::create('pengajuan_daya', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_lengkap')->;
+            $table->string('nama_lengkap');
             $table->string('alamat');
-            $table->string('rt');
-            $table->string('rw');
+            $table->smallInteger('rt');
+            $table->smallInteger('rw');
             $table->string('kelurahan');
             $table->string('kecamatan');
-            $table->string('no_ktp');
-            $table->string('no_telp');
+            $table->BigInteger('no_ktp');
+            $table->BigInteger('no_telp');
             $table->string('layanan');
             $table->string('peruntukan');
-            $table->string('daya');
+            $table->mediumInteger('daya');
             $table->timestamps();
         });
     }

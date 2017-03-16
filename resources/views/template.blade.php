@@ -34,7 +34,7 @@
         <!--Collapse content-->
         <div class="collapse navbar-toggleable-xs" id="collapseEx">
           <!--Navbar Brand-->
-          <a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
+          <a class="navbar-brand" href="{{ URL::to('halaman-utama') }}">
             <span>
               <img src="bower_components/img/logo-pln.png" height="20" width="20">
             </span>
@@ -43,19 +43,19 @@
           <!--Links-->
           <ul class="nav navbar-nav smooth-scroll">
             <li class="nav-item">
-              <a class="nav-link" href="#home"><i class="fa fa-home"></i> Halaman Utama <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ URL::to('halaman-utama') }}"><i class="fa fa-home"></i> Halaman Utama <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle waves-effect waves-light" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="true"><i class="fa fa-flash"></i> Layanan Daya Listrik</a>
                 <div class="dropdown-menu dropdown-primary dd-center" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                  <a class="dropdown-item waves-effect waves-light" href="#">Pemasangan Daya</a>
-                  <a class="dropdown-item waves-effect waves-light" href="#">Pemutusan Daya</a>
-                  <a class="dropdown-item waves-effect waves-light" href="#">Ubah Daya</a>
+                  <a class="dropdown-item" href="{{ URL::to('pasang-daya') }}">Pemasangan Daya</a>
+                  <a class="dropdown-item" href="{{ URL::to('pemutusan-daya') }}">Pemutusan Daya</a>
+                  <a class="dropdown-item" href="{{ URL::to('ubah-daya') }}">Ubah Daya</a>
                 </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#home"><i class="fa fa-comments"></i> Pengaduan<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ URL::to('pengaduan') }}"> Pengaduan</a>
             </li>
           </ul>
 
@@ -154,6 +154,7 @@
   ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="{{ URL::to('bower_components/js/jquery-3.1.1.min.js') }}"></script>
+  <script src="{{ URL::to('bower_components/js/tether.min.js') }}"></script>
   <script src="{{ URL::to('bower_components/js/bootstrap.js') }}"></script>
   <script src="{{ URL::to('bower_components/js/mdb.js') }}"></script>
 
@@ -163,6 +164,13 @@ $(document).ready(function() {
   $('.mdb-select').material_select();
 });
   </script>
+
+<script type="text/javascript">
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
+});
+
+</script>
 
 </body>
 

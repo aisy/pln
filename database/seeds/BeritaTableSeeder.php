@@ -12,7 +12,7 @@ class BeritaTableSeeder extends Seeder{
      */
   public function run(){
 
-    $faker = Faker\Factory::create();
+    $faker = Faker\Factory::create('id_ID');
     // Eloquent::unguard();
 
     foreach (range(1,20) as $i) {

@@ -42,7 +42,7 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         //
-        
+
     }
 
     /**
@@ -81,8 +81,7 @@ class BeritaController extends Controller
         //
         $patch  = $request->all();
 
-        $data   = Berita::find($id);
-        $update = $data->update($patch); 
+        $update   = Berita::find($id)->update($patch); 
     }
 
     /**

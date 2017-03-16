@@ -12,15 +12,15 @@ class PengaduanTableSeeder extends Seeder
      */
     public function run()
     {
+        // //
+        // $faker = Faker\Factory::create();
+        // // Eloquent::unguard();
         //
-        $faker = Faker\Factory::create();
-        // Eloquent::unguard();
-
-        foreach (range(1,5) as $i) {
-          Pengaduan::create([
-            'id_kategori' => "Kategori ".$i,
-            'isi'		      => $faker->Text
-          ]);
-        }
+        // foreach (range(1,5) as $i) {
+        //   Pengaduan::create([
+        //     'id_kategori' => "Kategori ".$i,
+        //     'isi'		      => $faker->Text
+        //   ]);
+        // }
     }
 }

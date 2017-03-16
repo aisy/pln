@@ -15,7 +15,6 @@ class CreateUbahDayaTable extends Migration
         //perintah membuat tabel dengan berbagai macam field
         Schema::create('ubah_daya', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('id_user');
             $table->string('peruntukan');
             $table->string('daya');
             $table->timestamps();

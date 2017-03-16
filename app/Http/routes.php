@@ -22,6 +22,7 @@ Route::resource('halaman-utama', 'HalamanUtamaController');
 //  PENGADUAN
 // =============================================================================
 Route::resource('pengaduan', 'PengaduanController');
+Route::post('pengaduan', 'PengaduanController@create');
 
 // =============================================================================
 // PASANG DAYA

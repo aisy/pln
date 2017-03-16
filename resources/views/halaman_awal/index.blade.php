@@ -1,6 +1,7 @@
 @extends('template')
 
 @section('header')
+
 	<!--Mask-->
 	<div class="view hm-black-strong">
 		<div class="full-bg-img flex-center">

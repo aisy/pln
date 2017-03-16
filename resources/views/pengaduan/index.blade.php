@@ -19,6 +19,9 @@
 				<!--Form-->
 
 				<div class="card wow fadeInLeft">
+
+					{!! Form::open(['method' => 'POST', 'url' => 'pengaduan']) !!}
+
 					<div class="card-block">
 						<!--Header-->
 						<div class="text-xs-center">
@@ -30,19 +33,17 @@
 
 							<div class="md-form">
 								<!--Blue select-->
-								<select class="mdb-select colorful-select dropdown-primary">
+								<select name="id_kategori" class="mdb-select colorful-select dropdown-primary">
 									<option value="">Jenis Keluhan</option>
 									@foreach ($kategori as $key)
-										<option value="{{ $key['id'] }}">
-											{{ $key['nama_kategori'] }}
-										</option>
+										<option value="{{ $key['id'] }}">{{ $key['nama_kategori'] }}</option>
 									@endforeach
 								</select>
 								<!--/Blue select-->
 							</div>
 
 							<div class="md-form">
-								<textarea type="text" class="md-textarea" placeholder="keluhan"></textarea>
+								<textarea name="isi" type="text" class="md-textarea" placeholder="keluhan"></textarea>
 						</div>
 
 						<div class="text-xs-center">
@@ -50,6 +51,10 @@
 						</div>
 
 					</div>
+
+					{!! Form::close() !!}
+
+
 				<!--/.Form-->
 			</div>
 			<!--/Second column-->
