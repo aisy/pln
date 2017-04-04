@@ -2,197 +2,166 @@
 <html lang="en">
 
 <head>
-
+    <!-- Required meta tags always come first -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Admin PLN</title>
 
-    <link rel="icon" href="/favicon.ico">
+    <!-- CSS -->
+    <link href="{{ URL::to('bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{ URL::to('bower_components/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('bower_components/css/mdb.css') }}" rel="stylesheet">
+    <link href="{{ URL::to('bower_components/css/style.css') }}" rel="stylesheet">
 
-    <title>PLN - Admin</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ URL::to('bower_components/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::to('bower_components/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::to('bower_components/metisMenu.min.css') }}" rel="stylesheet">
-    <link href="{{ URL::to('bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
-    
 </head>
 
-<body>
+<body class="fixed-sn mdb-skin">
 
-    <div id="wrapper">
+    <!--Double navigation-->
+    <header>
+        <!-- Sidebar navigation -->
+        <ul id="slide-out" class="side-nav fixed custom-scrollbar">
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"> <i class="fa fa-bolt"></i> PLN</a>
-            </div>
-            <!-- /.navbar-header -->
+            <!-- Logo -->
+            <li>
+                <div class="logo-wrapper sn-ad-avatar-wrapper">
+                    <img src="http://mdbootstrap.com/images/avatars/img%20(9)" class="img-fluid rounded-circle">
+                    <div class="rgba-stylish-strong">
+                        <p class="user white-text">Admin<br>admin@gmail.com</p>
+                    </div>
+                </div>
+            </li>
+            <!--/. Logo -->
 
-            <ul class="nav navbar-top-links navbar-right">
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-users"></i> Pelanggan<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Pengaduan Pelanggan</a>
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-flash"></i> Layanan<i class="fa fa-angle-down rotate-icon"></i></a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">Pemasangan</a>
                                 </li>
-                                <li>
-                                    <a href="morris.html">Pengajuan Pasang Daya</a>
+                                <li><a href="#" class="waves-effect">Pemutusan</a>
                                 </li>
-                                <li>
-                                    <a href="morris.html">Pengajuan Ubah Daya</a>
+                                <li><a href="#" class="waves-effect">Ubah</a>
                                 </li>
                             </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="tables.html"><i class="fa fa-newspaper-o"></i> Berita</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
+                        </div>
+                    </li>
+                    <li>
+                      <a class="waves-effect arrow-r">
+                        <i class="fa fa-newspaper-o"></i> Berita
+                      </a>
+                    </li>
+                    <li>
+                      <a class="waves-effect arrow-r">
+                        <i class="fa fa-gitlab"></i> Pengaduan
+                      </a>
+                    </li>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+
+        </ul>
+        <!--/. Sidebar navigation -->
+
+        <!--Navbar-->
+        <nav class="navbar navbar-fixed-top scrolling-navbar double-nav">
+
+            <!-- SideNav slide-out button -->
+            <div class="float-xs-left">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
             </div>
-            <!-- /.navbar-static-side -->
+
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn">
+                <p>PLN admin</p>
+            </div>
+
+            <ul class="nav navbar-nav float-xs-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profil</span></a>
+                    <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                        <a class="dropdown-item" href="#">Logout</a>
+                        {{-- <a class="dropdown-item" href="#">My account</a> --}}
+                    </div>
+                </li>
+            </ul>
+
         </nav>
+        <!--/.Navbar-->
+    </header>
+    <!--/Double navigation-->
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
+    <!--Main layout-->
+    <main>
+        <div class="container-fluid">
+            @yield('section1')
+        </div>
+    </main>
+    <!--/Main layout-->
 
-            <script src="{{ URL::to('bower_components/jquery/jquery.min.js') }}"></script>
-            <script src="{{ URL::to('bower_components/bootstrap/js/bootstrap.min.js') }}"></script>
-            <script src="{{ URL::to('bower_components/bootstrap/js/metisMenu.min.js')}}"></script>
-            <script src="{{ URL::to('bower_components/bootstrap/js/sb-admin-2.js')}}"></script>
+    <!-- SCRIPTS -->
+    <script src="{{ URL::to('bower_components/js/jquery-3.1.1.min.js') }}"></script>
+    <script src="{{ URL::to('bower_components/js/tether.min.js') }}"></script>
+    <script src="{{ URL::to('bower_components/js/bootstrap.js') }}"></script>
+    <script src="{{ URL::to('bower_components/js/mdb.js') }}"></script>
+    <!-- SCRIPTS -->
 
+    <script>
+        // SideNav init
+        $(".button-collapse").sideNav();
+        var el = document.querySelector('.custom-scrollbar');
+        Ps.initialize(el);
+    </script>
+
+    <script>
+        new WOW().init();
+    </script>
+
+    <script>
+        $(function() {
+            var data = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "rgba(220,220,220,0.2)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    pointColor: "rgba(220,220,220,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                }, {
+                    label: "My Second dataset",
+                    fillColor: "rgba(151,187,205,0.2)",
+                    strokeColor: "rgba(151,187,205,1)",
+                    pointColor: "rgba(151,187,205,1)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [28, 48, 40, 19, 86, 27, 90]
+                }]
+            };
+
+            var option = {
+                responsive: true,
+            };
+
+            // Chart-1
+            var ctx = document.getElementById("myChart-1").getContext('2d');
+            var myLineChart = new Chart(ctx).Line(data, option);
+
+             // Chart-2
+            var ctx = document.getElementById("myChart-2").getContext('2d');
+            var myLineChart = new Chart(ctx).Line(data, option);
+
+             // Chart-3
+            var ctx = document.getElementById("myChart-3").getContext('2d');
+            var myLineChart = new Chart(ctx).Line(data, option);
+        });
+    </script>
 
 </body>
 

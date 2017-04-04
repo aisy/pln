@@ -15,10 +15,13 @@ class BeritaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         //
 
+    }
+
+    public function admin(){
+      return View::make('admin/berita');
     }
 
     /**
@@ -26,8 +29,7 @@ class BeritaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
-    {
+    public function create(Request $request){
         //
         $data = $request->all();
         Berita::create($data);
@@ -63,8 +65,7 @@ class BeritaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id){
         //
         $data = Berita::find($id);
     }
@@ -80,8 +81,7 @@ class BeritaController extends Controller
     {
         //
         $patch  = $request->all();
-
-        $update   = Berita::find($id)->update($patch); 
+        $update   = Berita::find($id)->update($patch);
     }
 
     /**

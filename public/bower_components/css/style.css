@@ -1,9 +1,7 @@
 /* YOUR CUSTOM STYLES */
 
 html,
-body,
-header,
-.view {
+body{
     height: 100%;
 }
 /* Navigation*/
@@ -30,14 +28,6 @@ header,
 main {
     padding-top: 3rem;
     padding-bottom: 2rem;
-}
-
-.view {
-    background: url("../img/picture1vmb.jpg")no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 @media (max-width: 768px) {
@@ -68,6 +58,31 @@ main {
     padding: 0.5rem;
     font-size: 1.2rem;
     margin-bottom: 1.7rem;
+}
+
+/*carousel*/
+.carousel {
+    height: 50%;
+    margin-top: 50px;
+}
+
+@media (max-width: 776px) {
+    .carousel {
+        height: 100%;
+    }
+}
+
+.carousel-item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.flex-center {
+    color: #fff;
 }
 
 /*Footer*/

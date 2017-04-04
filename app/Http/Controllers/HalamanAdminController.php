@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Admin as Admin;
 use Illuminate\Http\Request;
+
+use App\Berita as Berita;
+use App\Pengaduan as Pengaduan;
+use App\Pengajuan_daya as Pengajuan;
+use App\ubah_daya as UbahDaya;
+
+use View;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AdminController extends Controller
+class HalamanAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +23,9 @@ class AdminController extends Controller
      */
     public function index(){
         //
-        $data = Admin::all();
+
+        return View::make('admin/halaman_utama');
+        // retrun view('admin/halaman');
     }
 
     /**
@@ -25,12 +33,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request){
+    public function create()
+    {
         //
-
-        $input = $request->all();
-        Admin::create($input);
-
     }
 
     /**
@@ -39,9 +44,9 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         //
-
     }
 
     /**
@@ -53,7 +58,6 @@ class AdminController extends Controller
     public function show($id)
     {
         //
-        $data = Admin::find($id);
     }
 
     /**
@@ -65,7 +69,6 @@ class AdminController extends Controller
     public function edit($id)
     {
         //
-        $data = Admin::findOrFail($id);
     }
 
     /**
@@ -78,10 +81,6 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $patch   = $request->all();
-
-        $find     = Admin::find($id);
-        $update  = $find->update($patch);
     }
 
     /**
@@ -93,8 +92,5 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
-        $find   = Admin::find($id);
-        $delete = $find->delete();
-
     }
 }
