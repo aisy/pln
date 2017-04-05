@@ -4,9 +4,6 @@
   <!--Section: Pricing v.1-->
   <section class="section">
 
-    <!--Section heading-->
-    <h1 class="section-heading"><i class="fa fa-dashboard"></i> Dahsboard</h1>
-
     <!--First row-->
     <div class="row">
 

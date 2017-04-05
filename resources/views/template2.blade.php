@@ -10,6 +10,7 @@
   <title>PLN</title>
 
   <!-- CSS -->
+  <link rel="stylesheet" href="/css/master.css">
   <link href="{{ URL::to('bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
   <link href="{{ URL::to('bower_components/css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ URL::to('bower_components/css/mdb.css') }}" rel="stylesheet">
