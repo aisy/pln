@@ -4,7 +4,7 @@
 	normal-header
 @endsection
 
-@section('konten1')
+@section('section1')
 	<section class="section">
 		<!--Second column-->
 		<!--Section heading-->

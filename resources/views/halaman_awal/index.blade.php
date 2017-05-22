@@ -1,5 +1,5 @@
 
-@extends('template2')
+@extends('template')
 
 {{--  --}}
 @section('caraousel-item')

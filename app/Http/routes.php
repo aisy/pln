@@ -34,6 +34,12 @@ Route::get('ubah-daya', function (){
 });
 // UBAH DAYA
 
+// PUTUS DAYA
+// Route::resource('pemutusan-daya', function(){
+// 	// return view('');
+// });
+//
+
 
 // =============================================================================
 // ADMIN

@@ -1,68 +1,81 @@
 @extends('template')
 
-@section('konten1')
+@section('section1')
 
-<div class="container">
-	<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-		<div class="page-header">
-			<h3><i class="fa fa-plug"></i> Ubah Daya Listrik</h3>
-		</div>
+	<section class="section">
+		<!--Second column-->
+		<!--Section heading-->
+		<h1 class="section-heading wow fadeIn" data-wow-delay="0.2s">Ubah Daya</h1>
+		<!--Section description-->
 
-		<div class="panel panel-default">
-			<div class="panel-body">
-				<form action="" method="POST" role="form">
-					<legend>Form Ubah Daya</legend>
-					<div class="alert alert-danger">
-					 	<strong>
-					 		<i class="fa fa-warning"></i> Data Pelanggan otomatis diambil dari akun yang digunakan!
-					 	</strong>
-					 </div> 
-				
-					<div class="form-group">
-						<select name="kategori" id="inputKategori" class="form-control">
-							<option value="">Jenis Layanan</option>
-							@for ($i = 1; $i<=5 ; $i++)
-								<option value="">Layanan {{ $i }}</option>
-							@endfor
-						</select>
+		<p class="section-description wow fadeIn" data-wow-delay="0.4s">Sudah pasang listrik namun tidak ingin menaikkan atau menurunkan daya listrik?, kami akan survey lokasi anda dan juga memastikan kondisi yang bagus untuk pemasangan daya listrik di bangunan anda</p>
+
+		<div class="col-md-8 push-md-2">
+			<!--Form-->
+
+			<div class="card wow fadeInLeft">
+				<div class="card-block">
+					<!--Header-->
+					<div class="text-xs-center">
+						<h3><i class="fa fa-reorder"></i> Ubah Daya</h3>
+						<hr>
 					</div>
 
-					<div class="form-group">
-						<select name="kategori" id="inputKategori" class="form-control">
-							<option value="">Peruntukan</option>
-							@for ($i = 1; $i<=3 ; $i++)
-								<option value="">Peruntukan {{ $i }}</option>
-							@endfor
-						</select>
+					<!--Body-->
+						<div class="md-form">
+							<input type="text" id="form3" class="form-control" placeholder="Nama Lengkap">
+						</div>
+
+						<div class="md-form">
+							<textarea type="text" class="md-textarea" placeholder="Alamat"></textarea>
+						</div>
+
+						<div class="form-inline">
+
+							<div class="md-form form-group">
+								<input type="text" id="form91" class="form-control validate" placeholder="RW">
+							</div>
+
+							<div class="md-form form-group">
+								<input type="text" id="form92" class="form-control validate" placeholder="RT">
+							</div>
+
+						</div>
+
+						<div class="md-form">
+							<!--Blue select-->
+							<select class="mdb-select colorful-select dropdown-primary">
+								<option value="">Kelurahan</option>
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+								<option value="4">Option 4</option>
+								<option value="5">Option 5</option>
+							</select>
+							<!--/Blue select-->
+						</div>
+
+						<div class="md-form">
+							<!--Blue select-->
+							<select class="mdb-select colorful-select dropdown-primary">
+								<option value="">Kecamatan</option>
+								<option value="1">Option 1</option>
+								<option value="2">Option 2</option>
+								<option value="3">Option 3</option>
+								<option value="4">Option 4</option>
+								<option value="5">Option 5</option>
+							</select>
+							<!--/Blue select-->
+						</div>
+
+					<div class="text-xs-center">
+						<button class="btn btn-ins btn-lg">Ajukan</button>
 					</div>
 
-					<div class="form-group">
-						<select name="kategori" id="inputKategori" class="form-control">
-							<option value="">Besar Daya</option>
-							@for ($i = 1; $i<=4 ; $i++)
-								<option value="">Daya {{ $i }}</option>
-							@endfor
-						</select>
-					</div>
-				
-					<button type="submit" class="btn btn-success">Kirim</button>
-				</form>
+				</div>
 			</div>
+			<!--/.Form-->
 		</div>
-		
-
-	</div>
-
-	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-		<div class="page-header">
-			<h3><i class="fa fa-handshake-o"></i> Layanan</h3>
-		</div>
-
-		<div class="list-group">
-			<a href="#" class="list-group-item active">Item 1</a>
-			<a href="#" class="list-group-item">Item 2</a>
-			<a href="#" class="list-group-item">Item 3</a>
-		</div>
-	</div>
-</div>
+		<!--/Second column-->
+	</section>
 @stop
