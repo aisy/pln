@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKomentarTable extends Migration
+class CreateKategorilayananTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateKomentarTable extends Migration
      */
     public function up()
     {
-        Schema::create('komentar', function (Blueprint $table) {
+        //
+        Schema::create('kategori_layanan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('berita_id');
-            $table->string('komentar');
-            // $table->string('password', 60);
+            $table->string('nama_kategori');
+            // $table->string('daya');
             $table->timestamps();
         });
     }

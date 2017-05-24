@@ -14,6 +14,20 @@
 
 		<p class="section-description wow fadeIn" data-wow-delay="0.4s">Punya Masalah dengan layanan kami? silahkan laporkan keluhan anda di sini</p>
 
+		@if(Session::has('flash_message'))
+			{{-- <div class="alert alert-success">
+			<span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em>
+		</div> --}}
+
+		<div class="center text-xs-center">
+			<div class="chip success-color">
+				<p class="white-text">{{ session('flash_message') }}</p>
+				<i class="close fa fa-times"></i>
+			</div>
+		</div>
+
+	@endif
+
 		<div class="col-lg-6 push-md-3">
 			<!--Form-->
 

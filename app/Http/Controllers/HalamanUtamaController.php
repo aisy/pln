@@ -18,12 +18,12 @@ class HalamanUtamaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        
+
         $carousel      = Berita::paginate(3);
         $more_news     = Berita::paginate(5);
         // return View::make('pemasangan', compact('more_news'));
 
-        return View::make('halaman_awal/index', compact('more_news','carousel'));
+        return View::make('halaman_awal/index2', compact('more_news','carousel'));
         // return View::make('index2');
     }
 

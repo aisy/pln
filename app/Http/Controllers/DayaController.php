@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class bestController extends Controller
+class DayaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +17,9 @@ class bestController extends Controller
     public function index()
     {
         //
+        $kategori = Kategori::all();
+
+        return View::make('pemasangan/index', compact('kategori'));
     }
 
     /**

@@ -13,12 +13,12 @@ class CreateUbahDayaTable extends Migration
     public function up()
     {
         //perintah membuat tabel dengan berbagai macam field
-        Schema::create('ubah_daya', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('peruntukan');
-            $table->string('daya');
-            $table->timestamps();
-        });
+        // Schema::create('ubah_daya', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('peruntukan');
+        //     $table->string('daya');
+        //     $table->timestamps();
+        // });
     }
 
     /**

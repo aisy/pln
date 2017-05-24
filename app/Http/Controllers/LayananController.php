@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Kategori_layanan as Kategori;
+use App\Layanan as Layanan;
+
+use View;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ubahDayaController extends Controller
+class LayananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +22,9 @@ class ubahDayaController extends Controller
     public function index()
     {
         //
+        $kategori = Kategori::all();
+
+        return View::make('layanan/index', compact('kategori'));
     }
 
     /**
@@ -27,6 +35,7 @@ class ubahDayaController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -38,6 +47,13 @@ class ubahDayaController extends Controller
     public function store(Request $request)
     {
         //
+        $data =  $request->all();
+        Layanan::create($data);
+
+        \Session::flash('flash_message','Data Anda Sudah di Ajukan.');
+
+        return redirect('layanan');
+
     }
 
     /**

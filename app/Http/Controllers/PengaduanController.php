@@ -30,10 +30,8 @@ class PengaduanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request){
-        $data = $request->all();
-        Pengaduan::create($data);
-        return redirect('pengaduan');
+    public function create(){
+
     }
 
     /**
@@ -45,6 +43,12 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        Pengaduan::create($data);
+
+        
+
+        return redirect('pengaduan');
     }
 
     /**

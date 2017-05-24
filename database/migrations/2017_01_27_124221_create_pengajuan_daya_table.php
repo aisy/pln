@@ -13,8 +13,9 @@ class CreatePengajuanDayaTable extends Migration
     public function up()
     {
         //perintah membuat tabel dengan berbagai macam field
-        Schema::create('pengajuan_daya', function (Blueprint $table) {
+        Schema::create('layanan', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kategori_id');
             $table->string('nama_lengkap');
             $table->string('alamat');
             $table->smallInteger('rt');

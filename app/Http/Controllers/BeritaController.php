@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Berita as Berita;
+use App\Berita as Berita;
 use Illuminate\Http\Request;
+
+use View;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -17,7 +19,8 @@ class BeritaController extends Controller
      */
     public function index(){
         //
-
+        $berita = Berita::paginate(10,['judul','isi']);
+        return View::make('berita/berita', compact('berita'));
     }
 
     public function admin(){
