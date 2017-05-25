@@ -80,11 +80,10 @@
 							<!--Blue select-->
 							<select name="kelurahan" class="mdb-select colorful-select dropdown-primary">
 								<option value="">Kelurahan</option>
-								<option value="1">Option 1</option>
-								<option value="2">Option 2</option>
-								<option value="3">Option 3</option>
-								<option value="4">Option 4</option>
-								<option value="5">Option 5</option>
+								<option value="1">Klojen</option>
+								<option value="2">Polehan</option>
+								<option value="3">Buring</option>
+								<option value="4">Dinoyo</option>
 							</select>
 							<!--/Blue select-->
 						</div>
@@ -92,12 +91,12 @@
 						<div class="md-form">
 							<!--Blue select-->
 							<select name="kecamatan" class="mdb-select colorful-select dropdown-primary">
-								<option value="">Kecamatan</option>
-								<option value="1">Option 1</option>
-								<option value="2">Option 2</option>
-								<option value="3">Option 3</option>
-								<option value="4">Option 4</option>
-								<option value="5">Option 5</option>
+								<option value="" disabled>Kecamatan</option>
+								<option value="1">Klojen</option>
+								<option value="2">Blimbing</option>
+								<option value="3">Kedung Kandang</option>
+								<option value="4">Lowokwaru</option>
+								<option value="5">Sukun</option>
 							</select>
 							<!--/Blue select-->
 						</div>
@@ -129,27 +128,30 @@
 
 				<div class="md-form">
 					<!--Blue select-->
-					<select name="peruntukan" class="mdb-select colorful-select dropdown-primary">
+					{{-- <select name="peruntukan" class="mdb-select colorful-select dropdown-primary">
 						<option value="">Peruntukan</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
 						<option value="5">Option 5</option>
-					</select>
+					</select> --}}
+					<textarea name="peruntukan" class="md-textarea" placeholder="Peruntukan" rows="8" cols="80"></textarea>
+
 					<!--/Blue select-->
 				</div>
 
 				<div class="md-form">
 					<!--Blue select-->
-					<select name="daya" class="mdb-select colorful-select dropdown-primary">
+					{{-- <select name="daya" class="mdb-select colorful-select dropdown-primary">
 						<option value="">Pilih Daya yang di Inginkan</option>
 						<option value="1">Option 1</option>
 						<option value="2">Option 2</option>
 						<option value="3">Option 3</option>
 						<option value="4">Option 4</option>
 						<option value="5">Option 5</option>
-					</select>
+					</select> --}}
+					<input type="number" class="form-control" name="daya" placeholder="Daya">
 					<!--/Blue select-->
 				</div>
 			</div>
