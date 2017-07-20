@@ -172,9 +172,9 @@
 
 
 				<div class="text-xs-center">
-					<button type="button" class="btn btn-default text-xs-center">
+					<a href="berita" class="btn btn-default text-xs-center">
 							<i class="fa fa-list-ol"></i> Lihat Selengkapnya
-					</button>
+					</a>
 				</div>
 
 			</div>

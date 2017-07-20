@@ -13,20 +13,21 @@ class CreatePengajuanDayaTable extends Migration
     public function up()
     {
         //perintah membuat tabel dengan berbagai macam field
-        Schema::create('layanan', function (Blueprint $table) {
+        Schema::create('pengaduan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kategori_id');
             $table->string('nama_lengkap');
+            $table->string('user_id');
             $table->string('alamat');
-            $table->smallInteger('rt');
-            $table->smallInteger('rw');
-            $table->string('kelurahan');
-            $table->string('kecamatan');
-            $table->BigInteger('no_ktp');
-            $table->BigInteger('no_telp');
-            $table->string('layanan');
-            $table->string('peruntukan');
-            $table->mediumInteger('daya');
+            // $table->smallInteger('rt');
+            // $table->smallInteger('rw');
+            // $table->string('kelurahan');
+            // $table->string('kecamatan');
+            // $table->BigInteger('no_ktp');
+            // $table->BigInteger('no_telp');
+            // $table->string('layanan');
+            // $table->string('peruntukan');
+            // $table->mediumInteger('daya');
             $table->timestamps();
         });
     }

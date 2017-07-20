@@ -20,7 +20,7 @@
 
 								<!--Image-->
 								<div class="view overlay hm-white-slight">
-									<img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20(82).jpg">
+									<img src="{{ URL::to('news')."/".$key['gambar'] }}">
 									<a>
 										<div class="mask"></div>
 									</a>
@@ -30,7 +30,7 @@
 							<!--Excerpt-->
 							<div class="col-md-9">
 								<p><strong>{{ $key['judul'] }}</strong></p>
-								<a>{{ $key['isi'] }}
+								<a>{{ str_limit($key['isi'], 300) }}
 									<i class="fa fa-angle-right"></i>
 								</a>
 							</div>
@@ -59,16 +59,13 @@
 
 				<nav class="navbar navbar-dark sidebar-heading">
 					<div class="flex-center">
-						<p class="white-text">Layanan</p>
+						<p class="white-text">Urutkan</p>
 					</div>
 				</nav>
 
 				<div class="list-group">
-					<a href="#" class="list-group-item active">Sport</a>
-					<a href="#" class="list-group-item">Music</a>
-					<a href="#" class="list-group-item">Travels</a>
-					<a href="#" class="list-group-item">Fashion</a>
-					<a href="#" class="list-group-item">Parties</a>
+					<a href="#" class="list-group-item active">Tahun</a>
+					<a href="#" class="list-group-item">Bulan</a>
 				</div>
 
 			</div>

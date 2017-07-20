@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Admin as Admin;
+use App\Admin as Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -42,6 +42,17 @@ class AdminController extends Controller
     public function store(Request $request){
         //
 
+    }
+
+    public function log(Request $request){
+      $username = $request->input('username');
+      $password = $request->input('password');
+
+      $log = Admin::where('username',$username)->where('password',$password)->first();
+
+      Session::set("username", $log->username);
+
+      echo Session::get('username');
     }
 
     /**

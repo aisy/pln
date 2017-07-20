@@ -24,7 +24,8 @@ class HalamanAdminController extends Controller
     public function index(){
         //
 
-        return View::make('admin/halaman_utama');
+        // return View::make('admin/halaman_utama');
+        return View::make('admin/login');
         // retrun view('admin/halaman');
     }
 

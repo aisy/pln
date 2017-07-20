@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Antrian as Antrian;
 use App\Berita as Berita;
 
 use View;
@@ -21,9 +22,12 @@ class HalamanUtamaController extends Controller
 
         $carousel      = Berita::paginate(3);
         $more_news     = Berita::paginate(5);
+        $antri         = Antrian::where('tgl_antrian',date('Y-m-d'))->orderBy('id', 'desc')->first();
         // return View::make('pemasangan', compact('more_news'));
 
-        return View::make('halaman_awal/index2', compact('more_news','carousel'));
+        // echo $antri;
+
+        return View::make('halaman_awal/index2', compact('more_news','carousel','antri'));
         // return View::make('index2');
     }
 

@@ -19,12 +19,10 @@ class LayananController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
         $kategori = Kategori::all();
 
-        return View::make('layanan/index', compact('kategori'));
+        return View::make('pengaduan/index', compact('kategori'));
     }
 
     /**
@@ -32,8 +30,7 @@ class LayananController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create(){
         //
 
     }
@@ -44,15 +41,14 @@ class LayananController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+
         $data =  $request->all();
         Layanan::create($data);
-
+        
         \Session::flash('flash_message','Data Anda Sudah di Ajukan.');
 
-        return redirect('layanan');
+        return redirect('pengaduan');
 
     }
 

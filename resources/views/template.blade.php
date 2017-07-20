@@ -46,10 +46,10 @@
             <a class="nav-link" href="{{ URL::to('berita') }}">
               <i class="fa fa-newspaper-o"></i> Berita</a>
           </li>
-          <li class="nav-item dropdown">
+          {{-- <li class="nav-item dropdown">
             <a href="{{ URL::to('layanan') }}" class="nav-link" >
               <i class="fa fa-flash"></i> Layanan Daya Listrik</a>
-          </li>
+          </li> --}}
           <li class="nav-item">
             <a class="nav-link" href="{{ URL::to('pengaduan') }}">
               <i class="fa fa-comments"></i> Pengaduan</a>

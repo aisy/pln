@@ -17,15 +17,27 @@ class KategoriLayananTableSeeder extends Seeder
         // Eloquent::unguard();
 
           Kategori::create([
-            'nama_kategori' 		  => "Tambah daya "
+            'nama_kategori' 		  => "1.1 Pasang Baru"
           ]);
 
           Kategori::create([
-            'nama_kategori' 		  => "Ubah daya "
+            'nama_kategori' 		  => "1.2 Penambahan Daya"
           ]);
 
           Kategori::create([
-            'nama_kategori' 		  => "Hapus daya "
+            'nama_kategori' 		  => "1.3 LPB (Listrik Pulsa Prabayar) "
+          ]);
+
+          Kategori::create([
+            'nama_kategori' 		  => "1.4 Baca Meter"
+          ]);
+
+          Kategori::create([
+            'nama_kategori' 		  => "1.5 P2TL (Penerbitan Pemakaian Tunggakan Listrik)"
+          ]);
+
+          Kategori::create([
+            'nama_kategori' 		  => "1.6 Tunggakan"
           ]);
 
     }

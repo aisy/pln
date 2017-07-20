@@ -13,6 +13,7 @@
     <link href="{{ URL::to('bower_components/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL::to('bower_components/css/mdb.css') }}" rel="stylesheet">
     <link href="{{ URL::to('bower_components/css/style.css') }}" rel="stylesheet">
+    @yield('css')
 
 </head>
 
@@ -37,26 +38,38 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
-                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-flash"></i> Layanan<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-flash"></i> Pengaduan<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                <li><a href="#" class="waves-effect">Pemasangan</a>
+                                {{ if () { }}
+                                <li><a href="#" class="waves-effect">1.1 Pasang Baru</a>
                                 </li>
-                                <li><a href="#" class="waves-effect">Pemutusan</a>
+                                <li><a href="#" class="waves-effect">1.2 Penambahan Daya</a>
                                 </li>
-                                <li><a href="#" class="waves-effect">Ubah</a>
+                                {{ } }}
+
+                                {{ if(){ }}
+                                <li><a href="#" class="waves-effect">1.3 LPB (Listrik pulsa prabayar)</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">1.4 Baca Meter</a>
+                                </li>
+                                {{ } }}
+
+                                <li><a href="#" class="waves-effect">1.5 P2TL (Penerbitan pemakaian tunggakan tenaga listrik)</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">1.6 Tunggakan</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                      <a class="waves-effect arrow-r">
+                      <a href=" {{ URL::to('administrator/berita') }} " class="waves-effect arrow-r">
                         <i class="fa fa-newspaper-o"></i> Berita
                       </a>
                     </li>
                     <li>
-                      <a class="waves-effect arrow-r">
-                        <i class="fa fa-gitlab"></i> Pengaduan
+                      <a href=" {{ URL::to('administrator/antrian') }} " class="waves-effect arrow-r">
+                        <i class="fa fa-list-ul"></i> Antrian
                       </a>
                     </li>
                 </ul>
@@ -108,6 +121,8 @@
     <script src="{{ URL::to('bower_components/js/bootstrap.js') }}"></script>
     <script src="{{ URL::to('bower_components/js/mdb.js') }}"></script>
     <!-- SCRIPTS -->
+
+    @yield('js')
 
     <script>
         // SideNav init

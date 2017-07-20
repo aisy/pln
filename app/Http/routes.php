@@ -24,13 +24,13 @@ Route::post('pengaduan', 'PengaduanController@store');
 
 // BERITA & KOMENTAR
 Route::resource('berita', 'BeritaController');
-
-Route::post('komentar', 'KomentarController@store');
-Route::patch('komentar', 'KomentarController@update');
+Route::get('berita/{id}', 'BeritaController@show');
+// Route::post('komentar', 'KomentarController@store');
+// Route::patch('komentar', 'KomentarController@update');
 
 // LAYANAN
-Route::resource('layanan', 'LayananController');
-Route::post('layanan-tambah', 'LayananController@store');
+// Route::resource('layanan', 'LayananController');
+// Route::post('layanan-tambah', 'LayananController@store');
 
 
 
@@ -39,6 +39,16 @@ Route::post('layanan-tambah', 'LayananController@store');
 // ADMIN
 // =============================================================================
 Route::resource('administrator/', 'HalamanAdminController');
+
+// Login
+Route::post('administrator/log', 'AdminController@log');
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postlogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // BERITA
 Route::get('administrator/berita', 'BeritaController@admin');
@@ -55,7 +65,7 @@ Route::delete('administrator/pengaduan-hapus/{id}', 'PengaduanController@destroy
 // PENGADUAN
 
 // Kelola Daya
-Route::get('administrator/tambah-daya', 'PengajuanDayaController@admin');
-Route::post('administrator/tambah-daya-tambah', 'PengajuanDayaController@create');
-Route::patch('administrator/tambah-daya-ubah/{id}', 'PengajuanDayaController@update');
-Route::delete('administrator/tambah-daya-hapus/{id}', 'PengajuanDayaController@destroy');
+// Route::get('administrator/tambah-daya', 'PengajuanDayaController@admin');
+// Route::post('administrator/tambah-daya-tambah', 'PengajuanDayaController@create');
+// Route::patch('administrator/tambah-daya-ubah/{id}', 'PengajuanDayaController@update');
+// Route::delete('administrator/tambah-daya-hapus/{id}', 'PengajuanDayaController@destroy');

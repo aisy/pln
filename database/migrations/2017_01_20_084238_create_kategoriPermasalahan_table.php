@@ -12,11 +12,11 @@ class CreateKategoriPermasalahanTable extends Migration
      */
     public function up()
     {
-         Schema::create('Kategori_permasalahan', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama_kategori');
-            $table->timestamps();
-        });
+        //  Schema::create('Kategori_permasalahan', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('nama_kategori');
+        //     $table->timestamps();
+        // });
     }
 
     /**

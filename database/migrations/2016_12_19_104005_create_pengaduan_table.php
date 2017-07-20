@@ -12,12 +12,12 @@ class CreatePengaduanTable extends Migration
      */
     public function up()
     {
-        Schema::create('pengaduan', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('id_kategori');
-            $table->string('isi');
-            $table->timestamps();
-        });
+        // Schema::create('pengaduan', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('id_kategori');
+        //     $table->string('isi');
+        //     $table->timestamps();
+        // });
     }
 
     /**

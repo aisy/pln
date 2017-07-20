@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Admin;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -32,6 +32,10 @@ class AuthController extends Controller
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 
+    //membuat variabel pada username dengan nama ='name'
+    protected $username   = 'username';
+    // protected $redirectTo = '/administrator';
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -41,9 +45,11 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
+            'nama_lengkap' => 'required|max:255',
+            'username'     => 'required|max:255',
+            // 'email' => 'required|email|max:255|unique:users',
+            'password'     => 'required|confirmed|min:6',
+            'level'        => 'required'
         ]);
     }
 
@@ -55,10 +61,12 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        return Admin::create([
+            'nama_lengkap' => $data['nama_lengkap'],
+            'username'     => $data['username'],
+            // 'email'    => $data['email'],
+            'password'     => bcrypt($data['password']),
+            'level'    => $data['level']
         ]);
     }
 }

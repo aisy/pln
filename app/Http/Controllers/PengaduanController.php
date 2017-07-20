@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Pengaduan as Pengaduan;
-use App\Kategori_masalah as Kategori;
+use App\Antrian as Antrian;
+// use App\Kategori_masalah as Kategori;
+use App\Kategori_layanan as Kategori;
 
 use View;
 
@@ -21,7 +23,7 @@ class PengaduanController extends Controller
     public function index(){
         //
       $kategori = Kategori::all();
-      return View::make('pengaduan/index', compact('kategori'));
+      return View::make('pengaduan/1_1', compact('kategori'));
 
     }
 
@@ -43,12 +45,26 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         //
-        $data = $request->all();
-        Pengaduan::create($data);
+        // $data = $request->all();
+        // Pengaduan::create($data);
+        //
+        //
+        //
+        // return redirect('pengaduan');
 
-        
+        $data =  $request->all();
+        Layanan::create($data);
 
-        return redirect('pengaduan');
+        $data_antrian = count(Antrian::where('tgl_antrian',date('Y-m-d'))->get());
+        Antrian::create([
+            "nomor_antrian" => $data_antrian+1,
+            "tgl_antrian"   => date('Y-m-d')
+        ]);
+
+
+        \Session::flash('flash_message','Nomor Antrian Anda Adalah');
+
+        return redirect('layanan');
     }
 
     /**

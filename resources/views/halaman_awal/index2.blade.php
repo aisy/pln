@@ -8,7 +8,7 @@
 <?php $i=1; ?>
 @foreach ($carousel as $key1)
 .carousel-item:nth-child({{ $i }}) {
-  background-image: url("http://mdbootstrap.com/images/slides/slide%20({{ $i }}).jpg");
+  background-image: url("{{ URL::to('news/kabel-pln.jpg') }}");
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.4;
@@ -58,13 +58,13 @@
               <div class="flex-center animated fadeInDown">
                 <ul>
                   <li>
-                    <h1 class="h1-responsive">Material Design for Bootstrap 4</h1></li>
-                    <li>
+                    <h1 class="h1-responsive">SMK PGRI 3 Kota Malang Dipercaya</h1></li>
+                    {{-- <li>
                       <p>The most powerful and free UI KIT for the newest Bootstrap</p>
-                    </li>
+                    </li> --}}
                     <li>
-                      <a target="_blank" href="http://mdbootstrap.com/getting-started/" class="btn btn-primary btn-lg">Sign up!</a>
-                      <a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg">Learn more</a>
+
+                      {{-- <a target="_blank" href="http://mdbootstrap.com/material-design-for-bootstrap/" class="btn btn-default btn-lg">Learn more</a> --}}
                     </li>
                   </ul>
                 </div>
@@ -125,10 +125,39 @@
               <!--/.Controls-->
             </div>
 
+            @foreach ($more_news as $key)
+    					<!--Small news-->
+    					<div class="single-news">
+
+    						<div class="row">
+    							<div class="col-md-3">
+
+    								<!--Image-->
+    								<div class="view overlay hm-white-slight">
+    									<img src="{{ URL::to('news')."/".$key['gambar'] }}" width="150px" height="150px">
+    									<a>
+    										<div class="mask"></div>
+    									</a>
+    								</div>
+    							</div>
+
+    							<!--Excerpt-->
+    							<div class="col-md-9">
+    								<p><strong>{{ str_limit($key['judul'], 50) }}</strong></p>
+    								<a>{{  str_limit($key['isi'],300)  }}
+    									<i class="fa fa-angle-right"></i>
+    								</a>
+    							</div>
+
+    						</div>
+    					</div>
+    					<!--/Small news-->
+    				@endforeach
+
             <div class="text-xs-center">
-              <button type="button" class="btn btn-default text-xs-center">
-                <i class="fa fa-list-ol"></i> Lihat Selengkapnya
-              </button>
+              <a href="berita" class="btn btn-default text-xs-center">
+    							<i class="fa fa-list-ol"></i> Lihat Selengkapnya
+    					</a>
             </div>
 
           </div>
@@ -138,42 +167,38 @@
           <div class="col-lg-4 col-md-12">
 
 
-            <!--Card-->
-            <div class="card-overlay" style="background-image: url({{ URL::to('images/pelayanan.jpg') }})">
-
-              <!--Content-->
-              <div class="white-text text-xs-center">
-                <div class="card-block">
-                  <h3 class="yellow-text"><i class="fa fa-flash"></i> Olah Daya</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                    <a href="{{ URL::to('layanan') }}" class="btn btn-lg btn-outline-white"><i class="fa fa-clone left"></i> View project</a>
-                  </div>
-                </div>
+            <!--Panel-->
+            <div class="card">
+              <div class="card-header navbar-dark white-text">
+                Tentang
               </div>
-              <!--/.Card-->
+              <div class="card-block">
+                <h4 class="card-title">PLN</h4>
+                <p class="card-text">Perusahaan Listrik Negara (disingkat PLN) atau nama resminya adalah PT. PLN (Persero) adalah sebuah BUMN yang mengurusi semua aspek kelistrikan yang ada di Indonesia.</p>
 
-              <!--Card-->
-              <div class="card-overlay" style="background-image: url({{ URL::to('images/cs.jpg') }})">
-
-                <!--Content-->
-                <div class="white-text text-xs-center">
-                  <div class="card-block">
-                    <h3 class="yellow-text"><i class="fa fa-comments"></i> Pengaduan</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                      <a href="{{ URL::to('pengaduan') }}" class="btn btn-lg btn-outline-white"><i class="fa fa-clone left"></i> Adukan Masalah</a>
-                    </div>
-                  </div>
-                </div>
-                <!--/.Card-->
-
-
+              </div>
             </div>
-            <!--/Second column-->
+            <!--/.Panel-->
+
+            <!--Panel-->
+            <div class="card">
+              <div class="card-header navbar-dark white-text">
+                Nomor Antrian
+              </div>
+              <div class="card-block center text-xs-center">
+                <h1 class="card-title">{{ $antri['nomor_antrian'] }}</h1>
+              </div>
+            </div>
+            <!--/.Panel-->
+
 
           </div>
-          <!--/First row-->
+          <!--/Second column-->
 
-        </section>
-        <!--/Section: Magazine v.1-->
-      @stop
-      {{-- SECTION 1 --}}
+        </div>
+        <!--/First row-->
+
+      </section>
+      <!--/Section: Magazine v.1-->
+    @stop
+    {{-- SECTION 1 --}}
