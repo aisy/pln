@@ -121,7 +121,7 @@
 
                     @endif
 
-                    <form action="login" method="POST">
+                    <form action="../administrator/log" method="POST">
 
                     <!-- buat token untuk verifikasi dan keamanan -->
                     <input type="hidden" name="_token" value="{{csrf_token()}}" />

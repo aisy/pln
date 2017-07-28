@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Antrian as Antrian;
+
+use View;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class Antrian extends Controller
+class AntrianController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +21,8 @@ class Antrian extends Controller
     public function index()
     {
         //
+        $data = Antrian::all();
+        return View::make('antrian/antrian', compact('data'));
     }
 
     /**

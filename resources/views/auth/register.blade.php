@@ -24,9 +24,9 @@
     <div>
         level
         <select class="" name="level">
-          <option value="Admin">Admin</option>
-          <option value="pelayanan_pelanggan">Pelayanan pelanggan</option>
-          <option value="transaksi_energi">Transaksi Energi</option>
+          <option value="admin">Admin</option>
+          <option value="pelayanan pelanggan">Pelayanan pelanggan</option>
+          <option value="transaksi energi">Transaksi Energi</option>
         </select>
         {{-- <input type="text" name="name" value="{{ old('name') }}"> --}}
     </div>

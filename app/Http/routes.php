@@ -42,9 +42,13 @@ Route::resource('administrator/', 'HalamanAdminController');
 
 // Login
 Route::post('administrator/log', 'AdminController@log');
+Route::get('administrator/logout', 'AdminController@logout');
+
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postlogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+
 
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
@@ -58,11 +62,12 @@ Route::delete('administrator/berita-hapus/{id}', 'BeritaController@destroy');
 // BERITA
 
 // PENGADUAN
-Route::get('administrator/pengaduan', 'PengaduanController@admin');
-Route::post('administrator/pengaduan-tambah', 'PengaduanController@create');
-Route::patch('administrator/pengaduan-ubah/{id}', 'PengaduanController@update');
-Route::delete('administrator/pengaduan-hapus/{id}', 'PengaduanController@destroy');
+Route::get('administrator/pengaduan/{id}', 'PengaduanController@data_pengaduan');
+// Route::get('')
 // PENGADUAN
+
+// ANTRIAN
+Route::get('administrator/antrian', 'AntrianController@index');
 
 // Kelola Daya
 // Route::get('administrator/tambah-daya', 'PengajuanDayaController@admin');

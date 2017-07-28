@@ -17,6 +17,7 @@ class CreateAdminTable extends Migration
             $table->string('nama_lengkap');
             $table->string('username');
             $table->string('password', 60);
+            $table->string('username');
             $table->rememberToken();
             $table->timestamps();
         });

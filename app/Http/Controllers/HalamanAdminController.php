@@ -24,8 +24,15 @@ class HalamanAdminController extends Controller
     public function index(){
         //
 
-        // return View::make('admin/halaman_utama');
-        return View::make('admin/login');
+        $data1 = Pengaduan::where('kategori_id','1')->get();
+        $data2 = Pengaduan::where('kategori_id','2')->get();
+        $data3 = Pengaduan::where('kategori_id','3')->get();
+        $data4 = Pengaduan::where('kategori_id','4')->get();
+        $data5 = Pengaduan::where('kategori_id','5')->get();
+        $data6 = Pengaduan::where('kategori_id','6')->get();
+
+        return View::make('admin/halaman_utama', compact('data1','data2','data3','data4','data5','data6'));
+        // return View::make('admin/login');
         // retrun view('admin/halaman');
     }
 

@@ -45,26 +45,27 @@ class PengaduanController extends Controller
     public function store(Request $request)
     {
         //
-        // $data = $request->all();
-        // Pengaduan::create($data);
+        $data = $request->all();
+        Pengaduan::create($data);
         //
         //
         //
         // return redirect('pengaduan');
 
-        $data =  $request->all();
-        Layanan::create($data);
+        // $data =  $request->all();
+        // Layanan::create($data);
 
         $data_antrian = count(Antrian::where('tgl_antrian',date('Y-m-d'))->get());
+        $no = $data_antrian+1;
         Antrian::create([
             "nomor_antrian" => $data_antrian+1,
             "tgl_antrian"   => date('Y-m-d')
         ]);
 
 
-        \Session::flash('flash_message','Nomor Antrian Anda Adalah');
+        \Session::flash('flash_message','Nomor Antrian Anda Adalah '.$no);
 
-        return redirect('layanan');
+        return redirect('pengaduan');
     }
 
     /**
@@ -115,5 +116,18 @@ class PengaduanController extends Controller
     {
         //
         Pengaduan::find($id)->delete();
+    }
+
+
+    // =========================================================================
+    // ADMIN
+    // =========================================================================
+
+    public function data_pengaduan($id){
+
+      $data = Pengaduan::where('kategori_id', $id)->get();
+
+      return View::make('admin/data_pengaduan', compact('data'));
+
     }
 }

@@ -34,7 +34,7 @@ class AuthController extends Controller
 
     //membuat variabel pada username dengan nama ='name'
     protected $username   = 'username';
-    // protected $redirectTo = '/administrator';
+    protected $redirectTo = '/administrator';
 
     /**
      * Get a validator for an incoming registration request.
@@ -65,8 +65,9 @@ class AuthController extends Controller
             'nama_lengkap' => $data['nama_lengkap'],
             'username'     => $data['username'],
             // 'email'    => $data['email'],
-            'password'     => bcrypt($data['password']),
-            'level'    => $data['level']
+            // 'password'     => bcrypt($data['password']),
+            'password'     => $data['password'],
+            'level'        => $data['level']
         ]);
     }
 }

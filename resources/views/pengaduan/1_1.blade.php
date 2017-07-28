@@ -61,7 +61,7 @@
 						</div>
 
 						<div class="md-form">
-							<input type="text" name="nama_user" id="form3" class="form-control" placeholder="Nama">
+							<input type="text" name="nama_lengkap" id="form3" class="form-control" placeholder="Nama">
 						</div>
 
 						<div class="md-form">

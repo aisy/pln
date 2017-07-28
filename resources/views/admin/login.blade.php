@@ -121,7 +121,7 @@
 
                     @endif
 
-                    <form action="administrator/log" method="POST">
+                    <form action="../administrator/log" method="POST">
 
                     <!-- buat token untuk verifikasi dan keamanan -->
                     <input type="hidden" name="_token" value="{{csrf_token()}}" />
@@ -129,7 +129,7 @@
                     <!--Body-->
                     <div class="md-form">
                       <i class="fa fa-user prefix"></i>
-                      <input name="username" type="text" id="form3" class="form-control">
+                      <input name="name" type="text" id="form3" class="form-control">
                       <label for="form3">Username</label>
                     </div>
                     <div class="md-form">

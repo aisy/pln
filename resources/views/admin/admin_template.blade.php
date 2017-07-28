@@ -29,7 +29,7 @@
                 <div class="logo-wrapper sn-ad-avatar-wrapper">
                     <img src="http://mdbootstrap.com/images/avatars/img%20(9)" class="img-fluid rounded-circle">
                     <div class="rgba-stylish-strong">
-                        <p class="user white-text">Admin<br>admin@gmail.com</p>
+                        <p class="user white-text">{{ Session::get('session')->username }}<br>{{ Session::get('session')->level }}</p>
                     </div>
                 </div>
             </li>
@@ -38,27 +38,35 @@
             <!-- Side navigation links -->
             <li>
                 <ul class="collapsible collapsible-accordion">
+                    <li>
+                      <a href=" {{ URL::to('administrator') }} " class="waves-effect arrow-r">
+                        <i class="fa fa-home"></i> Home
+                      </a>
+                    </li>
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-flash"></i> Pengaduan<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                                {{ if () { }}
-                                <li><a href="#" class="waves-effect">1.1 Pasang Baru</a>
+                              @if (Session::get('session')->level == "admin" || Session::get('session')->level == "pelayanan pelanggan")
+                                <li><a href="{{ URL::to('administrator/pengaduan/1') }}" class="waves-effect">1.1 Pasang Baru</a>
                                 </li>
-                                <li><a href="#" class="waves-effect">1.2 Penambahan Daya</a>
+                                <li><a href="{{ URL::to('administrator/pengaduan/2') }}" class="waves-effect">1.2 Penambahan Daya</a>
                                 </li>
-                                {{ } }}
+                              @endif
 
-                                {{ if(){ }}
-                                <li><a href="#" class="waves-effect">1.3 LPB (Listrik pulsa prabayar)</a>
+                              @if (Session::get('session')->level == "admin" || Session::get('session')->level == "transaksi energi")
+                                <li><a href="{{ URL::to('administrator/pengaduan/3') }}" class="waves-effect">1.3 LPB (Listrik pulsa prabayar)</a>
                                 </li>
-                                <li><a href="#" class="waves-effect">1.4 Baca Meter</a>
+                                <li><a href="{{ URL::to('administrator/pengaduan/4') }}" class="waves-effect">1.4 Baca Meter</a>
                                 </li>
-                                {{ } }}
+                              @endif
 
-                                <li><a href="#" class="waves-effect">1.5 P2TL (Penerbitan pemakaian tunggakan tenaga listrik)</a>
+                              @if (Session::get('session')->level == "admin")
+                                <li><a href="{{ URL::to('administrator/pengaduan/5') }}" class="waves-effect">1.5 P2TL (Penerbitan pemakaian tunggakan tenaga listrik)</a>
                                 </li>
-                                <li><a href="#" class="waves-effect">1.6 Tunggakan</a>
+                                <li><a href="{{ URL::to('administrator/pengaduan/6') }}" class="waves-effect">1.6 Tunggakan</a>
                                 </li>
+                              @endif
+
                             </ul>
                         </div>
                     </li>
@@ -96,7 +104,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profil</span></a>
                     <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" href="{{ URL::to('administrator/logout') }}">Logout</a>
                         {{-- <a class="dropdown-item" href="#">My account</a> --}}
                     </div>
                 </li>

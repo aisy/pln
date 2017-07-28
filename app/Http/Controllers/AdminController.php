@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use Session;
+use Redirect;
 use App\Admin as Admin;
 use Illuminate\Http\Request;
 
@@ -45,14 +48,20 @@ class AdminController extends Controller
     }
 
     public function log(Request $request){
+
       $username = $request->input('username');
       $password = $request->input('password');
 
       $log = Admin::where('username',$username)->where('password',$password)->first();
 
-      Session::set("username", $log->username);
+      Session::set("session", $log);
 
-      echo Session::get('username');
+      return Redirect::to('administrator');
+    }
+
+    public function logout(){
+      Session::flush();
+      return Redirect::to('auth/login');
     }
 
     /**
