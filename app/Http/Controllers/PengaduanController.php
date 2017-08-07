@@ -104,6 +104,7 @@ class PengaduanController extends Controller
         //
         $patch  = $request->all();
         $update = Pengaduan::find($id)->update($patch);
+        return redirect('administrator/pengaduan/'.$id);
     }
 
     /**
@@ -116,6 +117,7 @@ class PengaduanController extends Controller
     {
         //
         Pengaduan::find($id)->delete();
+        return redirect('administrator/pengaduan/'.$id);
     }
 
 

@@ -35,7 +35,7 @@ class BeritaController extends Controller
   */
   public function create(Request $request){
     //
-    $file          = $request->file('gambar'); //mangambil data file dari input type file
+    $file          = $request->file('file_gambar'); //mangambil data file dari input type file
 
     if($file==NULL){
       $name_file = " ";
@@ -48,6 +48,8 @@ class BeritaController extends Controller
 
     $data = $request->all();
     Berita::create($data);
+
+    return redirect('administrator/berita');
   }
 
   /**
@@ -71,8 +73,8 @@ class BeritaController extends Controller
   public function show($id)
   {
     //
-    $data = Berita::find($id);
-    return View::make('berita/detailBerita', compact('data'));
+    $data = Berita::where('id',$id)->first();
+    return View::make('berita/update_berita', compact('data','id'));
   }
 
   /**
@@ -93,11 +95,30 @@ class BeritaController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, $id)
-  {
-    //
-    $patch  = $request->all();
+  public function update(Request $request, $id){
+  
+    $patch    = $request->all();
     $update   = Berita::find($id)->update($patch);
+
+    print_r($patch);
+
+    echo $request->input('gambar');
+
+    $file          = $request->file('file_gambar'); //mangambil data file dari input type file
+
+    if($file==NULL){
+      $name_file    = " ";
+      
+    }else{
+      $name_file    = $file->getClientOriginalName(); //dapat nama file dari $file
+      $destination  = public_path().'/news'; //lokasi folder yang akan di upload
+
+      $file->move($destination, $name_file);
+
+    }
+
+      return redirect('administrator/berita');
+
   }
 
   /**
@@ -110,5 +131,6 @@ class BeritaController extends Controller
   {
     //
     Berita::find($id)->delete();
+    return redirect('administrator/berita');
   }
 }

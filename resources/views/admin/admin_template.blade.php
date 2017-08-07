@@ -51,16 +51,14 @@
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/2') }}" class="waves-effect">1.2 Penambahan Daya</a>
                                 </li>
-                              @endif
-
-                              @if (Session::get('session')->level == "admin" || Session::get('session')->level == "transaksi energi")
                                 <li><a href="{{ URL::to('administrator/pengaduan/3') }}" class="waves-effect">1.3 LPB (Listrik pulsa prabayar)</a>
                                 </li>
+
+                             @endif
+
+                              @if (Session::get('session')->level == "admin" || Session::get('session')->level == "transaksi energi")
                                 <li><a href="{{ URL::to('administrator/pengaduan/4') }}" class="waves-effect">1.4 Baca Meter</a>
                                 </li>
-                              @endif
-
-                              @if (Session::get('session')->level == "admin")
                                 <li><a href="{{ URL::to('administrator/pengaduan/5') }}" class="waves-effect">1.5 P2TL (Penerbitan pemakaian tunggakan tenaga listrik)</a>
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/6') }}" class="waves-effect">1.6 Tunggakan</a>
@@ -172,17 +170,6 @@
                 responsive: true,
             };
 
-            // Chart-1
-            var ctx = document.getElementById("myChart-1").getContext('2d');
-            var myLineChart = new Chart(ctx).Line(data, option);
-
-             // Chart-2
-            var ctx = document.getElementById("myChart-2").getContext('2d');
-            var myLineChart = new Chart(ctx).Line(data, option);
-
-             // Chart-3
-            var ctx = document.getElementById("myChart-3").getContext('2d');
-            var myLineChart = new Chart(ctx).Line(data, option);
         });
     </script>
 

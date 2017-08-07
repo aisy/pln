@@ -17,7 +17,7 @@
     </thead>
 
     <tbody>
-      @foreach ($data as $element)
+      @foreach ($antrian as $element)
         <tr>
           <td>{{ $element['id'] }}</td>
           <td>{{ $element['nomor_antrian'] }}</td>

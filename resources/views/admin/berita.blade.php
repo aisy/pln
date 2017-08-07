@@ -29,7 +29,7 @@
         </div>
         <!--Body-->
         <div class="modal-body">
-          <form class="" action="berita-tambah" method="post">
+          <form class="" action="berita-tambah" method="post" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
             <div class="md-form">
@@ -39,10 +39,10 @@
             <div class="file-field">
               <div class="btn btn-primary btn-sm">
                 <span>Pilih gambar</span>
-                <input name="gambar" type="file">
+                <input name="file_gambar" type="file">
               </div>
               <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" placeholder="Pilih Gambar Headline">
+                <input class="file-path validate" name="gambar" type="text" placeholder="Pilih Gambar Headline">
               </div>
             </div>
 
@@ -50,13 +50,14 @@
               <textarea type="text" name="isi" class="md-textarea" placeholder="isi"></textarea>
             </div>
 
-          </form>
+         
         </div>
         <!--Footer-->
         <div class="modal-footer">
           {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
           <button type="submit" class="btn btn-success">Simpan</button>
         </div>
+         </form>
       </div>
       <!--/.Content-->
     </div>
@@ -80,12 +81,13 @@
           <td><img src="{{ URL::to("news")."/".$element['gambar'] }}" heigth="250" width="250" class="img-responsive" alt="Image"></td>
           <td>{{ $element['judul'] }}</td>
           <td>
-            <button type="button" class="btn btn-sm btn-warning">
+            <a href="{{ url('administrator/berita-ubah/'.$element['id']) }}" type="button" class="btn btn-sm btn-warning">
               <i class="fa fa-edit"></i>
-            </button>
-            <button type="button" class="btn btn-sm btn-danger">
-              <i class="fa fa-trash-o"></i>
-            </button>
+            </a>
+            
+            {!! Form::open(['method'=>'DELETE','route'=>['berita.hapus_data.delete',$element['id'] ] ]) !!}
+							{!! Form::button('<i class="fa fa-times"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}
+							{!! Form::close() !!}
           </td>
         </tr>
       @endforeach

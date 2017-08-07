@@ -69,9 +69,7 @@
 
         </div>
         <!--/Second column-->
-      @endif
-
-      @if (Session::get('session')->level == "admin" || Session::get('session')->level == "transaksi energi")
+      
       <!--Third column-->
       <div class="col-lg-3 mb-1">
 
@@ -103,6 +101,10 @@
       </div>
       <!--/Third column-->
 
+      @endif
+
+      @if (Session::get('session')->level == "admin" || Session::get('session')->level == "transaksi energi")
+
       <!--Fourth column-->
       <div class="col-lg-3 mb-1">
 
@@ -133,9 +135,6 @@
 
       </div>
       <!--/Fourth column-->
-      @endif
-
-      @if (Session::get('session')->level == "admin")
         <!--/Five column-->
         <div class="col-lg-3 mb-1">
 

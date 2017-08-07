@@ -57,13 +57,16 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 // BERITA
 Route::get('administrator/berita', 'BeritaController@admin');
 Route::post('administrator/berita-tambah', 'BeritaController@create');
+Route::get('administrator/berita-ubah/{id}', 'BeritaController@show');
 Route::patch('administrator/berita-ubah/{id}', 'BeritaController@update');
-Route::delete('administrator/berita-hapus/{id}', 'BeritaController@destroy');
+Route::delete('administrator/berita-hapus/{id}', ['as'=>'berita.hapus_data.delete','uses'=>'BeritaController@destroy']);
 // BERITA
 
 // PENGADUAN
 Route::get('administrator/pengaduan/{id}', 'PengaduanController@data_pengaduan');
-// Route::get('')
+Route::get('administrator/ubah-pengaduan/{id}', 'PengaduanController@show');
+// Route::patch('administrator/ubah-pengaduan/{id}', 'PengaduanController@update');
+Route::delete('administrator/hapus-pengaduan/{id}', ['as'=>'pengaduan.hapus_data.delete','uses'=>'PengaduanController@destroy']);
 // PENGADUAN
 
 // ANTRIAN

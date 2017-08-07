@@ -18,11 +18,9 @@ class AntrianController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-        $data = Antrian::all();
-        return View::make('antrian/antrian', compact('data'));
+    public function index(){
+        $antrian = Antrian::all();
+        return View::make('admin/antrian', compact('antrian'));
     }
 
     /**

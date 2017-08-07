@@ -12,6 +12,6 @@ class Berita extends Model
     protected $table = 'berita';
 
     //field yang bisa di isi
-    protected $fillable = ['judul', 'isi'];
+    protected $fillable = ['judul', 'isi', 'gambar'];
     
 }
