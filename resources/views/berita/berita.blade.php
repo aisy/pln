@@ -20,8 +20,8 @@
 
 								<!--Image-->
 								<div class="view overlay hm-white-slight">
+									<a href="{{ URL::to('berita/detail/'.$key['id']) }}">
 									<img src="{{ URL::to('news')."/".$key['gambar'] }}">
-									<a>
 										<div class="mask"></div>
 									</a>
 								</div>
@@ -29,8 +29,10 @@
 
 							<!--Excerpt-->
 							<div class="col-md-9">
+								<a href="{{ URL::to('berita/detail/'.$key['id']) }}">
 								<p><strong>{{ $key['judul'] }}</strong></p>
-								<a>{{ str_limit($key['isi'], 300) }}
+
+									{{ str_limit($key['isi'], 300) }}
 									<i class="fa fa-angle-right"></i>
 								</a>
 							</div>

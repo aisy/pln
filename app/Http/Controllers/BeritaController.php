@@ -96,7 +96,7 @@ class BeritaController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function update(Request $request, $id){
-  
+
     $patch    = $request->all();
     $update   = Berita::find($id)->update($patch);
 
@@ -108,7 +108,7 @@ class BeritaController extends Controller
 
     if($file==NULL){
       $name_file    = " ";
-      
+
     }else{
       $name_file    = $file->getClientOriginalName(); //dapat nama file dari $file
       $destination  = public_path().'/news'; //lokasi folder yang akan di upload
@@ -132,5 +132,11 @@ class BeritaController extends Controller
     //
     Berita::find($id)->delete();
     return redirect('administrator/berita');
+  }
+
+  public function detailBerita($id){
+    $data = Berita::where('id', $id)->first();
+
+    return View::make('berita/detailBerita', compact('data'));
   }
 }

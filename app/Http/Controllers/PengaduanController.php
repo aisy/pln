@@ -9,6 +9,7 @@ use App\Antrian as Antrian;
 use App\Kategori_layanan as Kategori;
 
 use View;
+use Redirect;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -104,7 +105,8 @@ class PengaduanController extends Controller
         //
         $patch  = $request->all();
         $update = Pengaduan::find($id)->update($patch);
-        return redirect('administrator/pengaduan/'.$id);
+        // return redirect('administrator/pengaduan/'.$id);
+        
     }
 
     /**
@@ -117,7 +119,8 @@ class PengaduanController extends Controller
     {
         //
         Pengaduan::find($id)->delete();
-        return redirect('administrator/pengaduan/'.$id);
+        // return redirect('administrator/pengaduan/'.$id);
+        return Redirect::back();
     }
 
 

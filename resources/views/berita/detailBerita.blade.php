@@ -19,24 +19,20 @@
 													<div class="col-md-12 wow fadeInUp">
 
 															<!--Featured image-->
-															<img src="http://mdbootstrap.com/images/slides/slide%20(16).jpg">
+															<img src="{{ URL::to('news/'.$data['gambar']) }}">
 
 															<!--Post data-->
 															<div class="jumbotron wow fadeInUp" data-wow-delay="0.2s">
-																	<h2>How I've started my adventure with surfing?</h2>
-																	 <p class="blue-text"> <i class="fa fa-calendar "></i> 26-03-2016</p>
+																	<h2>{{ $data['judul'] }}</h2>
+																	 <p class="blue-text"> <i class="fa fa-calendar "></i> {{ $data['created_at'] }}</p>
 
 															</div>
 															<!--/Post data-->
 
 															<!--Post text-->
 															<div class="post-text">
-																	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ut tempore, cum minus perspiciatis, blanditiis tempora molestias dolorem pariatur deserunt laudantium, reprehenderit! Sed accusamus vitae qui, perferendis
-																			minus.
+																	<p>{{ $data['isi'] }}
 																	</p>
-
-																	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa expedita quia animi placeat repudiandae, eius quos. Modi nulla, nisi itaque ullam ab, aliquam velit facilis, explicabo, eius saepe maxime quod.Lorem ipsum
-																			dolor sit amet, consectetur adipisicing elit. Ipsa expedita quia animi placeat repudiandae, eius quos. Modi nulla, nisi itaque ullam ab, aliquam velit facilis, explicabo, eius saepe maxime quod.</p>
 															</div>
 															<!--/Post text-->
 

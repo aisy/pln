@@ -25,6 +25,7 @@ Route::post('pengaduan', 'PengaduanController@store');
 // BERITA & KOMENTAR
 Route::resource('berita', 'BeritaController');
 Route::get('berita/{id}', 'BeritaController@show');
+Route::get('berita/detail/{id}', 'BeritaController@detailBerita');
 // Route::post('komentar', 'KomentarController@store');
 // Route::patch('komentar', 'KomentarController@update');
 
