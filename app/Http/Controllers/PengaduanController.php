@@ -7,6 +7,7 @@ use App\Pengaduan as Pengaduan;
 use App\Antrian as Antrian;
 // use App\Kategori_masalah as Kategori;
 use App\Kategori_layanan as Kategori;
+use App\PengaduanDetail as Detail;
 
 use View;
 use Redirect;
@@ -24,8 +25,15 @@ class PengaduanController extends Controller
     public function index(){
         //
       $kategori = Kategori::all();
-      return View::make('pengaduan/1_1', compact('kategori'));
+      return View::make('pengaduan/menuPengaduan', compact('kategori'));
 
+    }
+
+    public function form($id){
+        //
+      $kategori = Kategori::where('id', $id)->first();
+      return View::make('pengaduan/1_1', compact('id','kategori'));
+     
     }
 
     /**
@@ -48,9 +56,39 @@ class PengaduanController extends Controller
         //
         $data = $request->all();
         Pengaduan::create($data);
+    
+        // return redirect('pengaduan');
+
+        // $data =  $request->all();
+        // Layanan::create($data);
+
+        $data_antrian = count(Antrian::where('tgl_antrian',date('Y-m-d'))->get());
+        $no = $data_antrian+1;
+        Antrian::create([
+            "nomor_antrian" => $data_antrian+1,
+            "tgl_antrian"   => date('Y-m-d')
+        ]);
+
+
+        \Session::flash('flash_message','Nomor Antrian Anda Adalah '.$no);
+
+        return redirect('pengaduan');
+    }
+
+    public function tunggakan(Request $request)
+    {
         //
-        //
-        //
+        $data = $request->all();
+        Pengaduan::create($data);
+        Detail::create(array(
+          'id_pengaduan'   => $request->input('id_pengaduan'),
+          'bulan'          => $request->input('bulan'),
+          'status_mutasi'  => $request->input('pilihan'),
+          'pilihan_mutasi' => $request->input('mutasin'),
+          'status_bayar'   => $request->input('status'),  
+          'pilihan'        => $request->input('pilihan3')
+        ));
+    
         // return redirect('pengaduan');
 
         // $data =  $request->all();
@@ -103,8 +141,8 @@ class PengaduanController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $patch  = $request->all();
-        $update = Pengaduan::find($id)->update($patch);
+        // $patch  = $request->all();
+        // $update = Pengaduan::find($id)->update($patch);
         // return redirect('administrator/pengaduan/'.$id);
         
     }
@@ -135,4 +173,26 @@ class PengaduanController extends Controller
       return View::make('admin/data_pengaduan', compact('data'));
 
     }
+
+    public function konfirmasi(Request $request, $id){
+
+        $data = Pengaduan::where('id', $id)->first();
+
+        return View::make('pengaduan/menuKonfirmasi', compact('data','id'));
+        
+    }
+
+    public function prosesKonf(Request $request){
+
+         $id = $request->input('id_pengaduan');
+
+        //   echo $id;
+
+          // $data = Pengaduan::where('id', $id)->first();
+
+          $patch  = $request->all();
+          $update = Pengaduan::find($id)->update($patch);
+                
+    }
+
 }

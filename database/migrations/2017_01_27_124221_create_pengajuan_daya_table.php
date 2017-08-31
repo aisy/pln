@@ -19,6 +19,10 @@ class CreatePengajuanDayaTable extends Migration
             $table->string('nama_lengkap');
             $table->string('user_id');
             $table->string('alamat');
+            $table->text('keluhan');
+            $table->text('verifikasi')->nullable();
+            $table->text('tindak_lanjut')->nullable();
+            $table->string('status');
             // $table->smallInteger('rt');
             // $table->smallInteger('rw');
             // $table->string('kelurahan');

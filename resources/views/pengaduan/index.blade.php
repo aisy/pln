@@ -62,6 +62,8 @@
 						<textarea name="isi" type="text" class="md-textarea" placeholder="keluhan"></textarea>
 					</div>
 
+					
+
 					<div class="text-xs-center">
 						<button class="btn btn-ins btn-lg">Kirim Keluhan</button>
 					</div>

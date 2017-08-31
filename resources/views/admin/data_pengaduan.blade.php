@@ -38,9 +38,9 @@
         <td>{{ $element['alamat'] }}</td>
         <td>{{ str_limit($element['created_at'], 10, '') }}
           <td>
-            <button type="button" class="btn btn-sm btn-success">
+            <a href="{{ URL::to('administrator/konf-pengaduan/'.$element['id']) }}" class="btn btn-sm btn-success">
               <i class="fa fa-check"></i>
-            </button>
+            </a>
             {!! Form::open(['method'=>'DELETE','route'=>['pengaduan.hapus_data.delete',$element['id'] ] ]) !!}
             {!! Form::button('<i class="fa fa-trash-o"></i>', ['type'=>'submit','class'=>'btn btn-sm btn-danger']) !!}
             {!! Form::close() !!}

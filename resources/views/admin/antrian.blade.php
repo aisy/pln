@@ -12,7 +12,7 @@
         <th>#</th>
         <th>Nomor Antrian</th>
         <th>Tgl Antrian</th>
-        {{-- <th>opsi</th> --}}
+        <th>opsi</th>
       </tr>
     </thead>
 

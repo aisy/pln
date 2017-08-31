@@ -20,7 +20,9 @@ Route::resource('halaman-utama', 'HalamanUtamaController');
 
 // PENGADUAN
 Route::resource('pengaduan', 'PengaduanController');
+Route::get('pengaduan/menu/{id}', 'PengaduanController@form');
 Route::post('pengaduan', 'PengaduanController@store');
+Route::post('pengaduan/tunggakan', 'PengaduanController@tunggakan');
 
 // BERITA & KOMENTAR
 Route::resource('berita', 'BeritaController');
@@ -66,6 +68,8 @@ Route::delete('administrator/berita-hapus/{id}', ['as'=>'berita.hapus_data.delet
 // PENGADUAN
 Route::get('administrator/pengaduan/{id}', 'PengaduanController@data_pengaduan');
 Route::get('administrator/ubah-pengaduan/{id}', 'PengaduanController@show');
+Route::get('administrator/konf-pengaduan/{id}', 'PengaduanController@konfirmasi');
+Route::patch('administrator/konf-pengaduan/proses', 'PengaduanController@prosesKonf');
 // Route::patch('administrator/ubah-pengaduan/{id}', 'PengaduanController@update');
 Route::delete('administrator/hapus-pengaduan/{id}', ['as'=>'pengaduan.hapus_data.delete','uses'=>'PengaduanController@destroy']);
 // PENGADUAN
