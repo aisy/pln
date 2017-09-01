@@ -44,10 +44,12 @@
 					<div class="col-md-12">
 
 						<input type="hidden" name="kategori_id" value="{{ $kategori->id }}">
-
-						{{--  <div class="md-form">
+						
+						@if($kategori->id !=1 )
+						<div class="md-form">
 							<input type="text" name="user_id" id="form3" class="form-control" placeholder="ID Pelanggan">
-						</div>  --}}
+						</div>						
+						@endif
 
 						<div class="md-form">
 							<input type="text" name="nama_lengkap" id="form3" class="form-control" placeholder="Nama">
