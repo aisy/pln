@@ -72,7 +72,7 @@ class PengaduanController extends Controller
 
         \Session::flash('flash_message','Nomor Antrian Anda Adalah '.$no);
 
-        return redirect('pengaduan');
+        return redirect('pengaduan/');
     }
 
     public function tunggakan(Request $request)

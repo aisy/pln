@@ -21,7 +21,7 @@ Route::resource('halaman-utama', 'HalamanUtamaController');
 // PENGADUAN
 Route::resource('pengaduan', 'PengaduanController');
 Route::get('pengaduan/menu/{id}', 'PengaduanController@form');
-Route::post('pengaduan', 'PengaduanController@store');
+Route::post('pengaduan/', 'PengaduanController@store');
 Route::post('pengaduan/tunggakan', 'PengaduanController@tunggakan');
 
 // BERITA & KOMENTAR

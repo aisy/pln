@@ -7,10 +7,7 @@
 @section('section1')
 	<section class="section">
 		
-		@if(Session::has('flash_message'))
-			{{-- <div class="alert alert-success">
-			<span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em>
-		</div> --}}
+		{{--  @if(Session::has('flash_message'))
 
 		<div class="center text-xs-center">
 			<div class="chip success-color">
@@ -19,7 +16,7 @@
 			</div>
 		</div>
 
-	@endif
+		@endif  --}}
 
 	<div class="col-lg-12">
 		<!--Form-->
@@ -27,7 +24,7 @@
 		@if($kategori->id == 6)
 			<form action="{{ URL::to('pengaduan/tunggakan') }}" method="post">
 		@else
-			<form action="pengaduan" method="post">
+			<form action="{{ URL::to('pengaduan/') }}" method="post">
 		@endif
 			<input type="hidden" name="_token" value="{{csrf_token()}}" />
 
