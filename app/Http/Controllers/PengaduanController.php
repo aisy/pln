@@ -128,7 +128,8 @@ class PengaduanController extends Controller
     public function edit($id)
     {
         //
-        $data = Pengaduan::find($id);
+        $data = Pengaduan::where('id', $id)->first();
+        return View::make('pengaduan/pengaduanUpdate',compact('data'));
     }
 
     /**
@@ -138,12 +139,14 @@ class PengaduanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         //
-        // $patch  = $request->all();
-        // $update = Pengaduan::find($id)->update($patch);
-        // return redirect('administrator/pengaduan/'.$id);
+        $id_kategori = $request->input('kategori_id');
+
+        $patch  = $request->all();
+        $update = Pengaduan::find($id)->update($patch);
+        return redirect('administrator/pengaduan/'.$id_kategori);
+        // return Redirect::back();
         
     }
 
@@ -192,7 +195,7 @@ class PengaduanController extends Controller
 
           $patch  = $request->all();
           $update = Pengaduan::find($id)->update($patch);
-                
+          return Redirect::back();
     }
 
 }

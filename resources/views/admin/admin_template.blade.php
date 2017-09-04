@@ -27,7 +27,7 @@
             <!-- Logo -->
             <li>
                 <div class="logo-wrapper sn-ad-avatar-wrapper">
-                    <img src="http://mdbootstrap.com/images/avatars/img%20(9)" class="img-fluid rounded-circle">
+                    <img src="{{ URL::to('images/images.png') }}" class="img-fluid rounded-circle">
                     <div class="rgba-stylish-strong">
                         <p class="user white-text">{{ Session::get('session')->username }}<br>{{ Session::get('session')->level }}</p>
                     </div>
