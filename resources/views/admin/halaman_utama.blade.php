@@ -7,7 +7,7 @@
     <!--First row-->
     <div class="row">
 
-      @if (Session::get('session')->level == "admin" || Session::get('session')->level == "pelayanan pelanggan")
+      @if (Session::get('session')->level == "cs" || Session::get('session')->level == "pelayanan pelanggan")
         <!--First column-->
         <div class="col-lg-3 mb-1">
 
@@ -91,7 +91,7 @@
               </div>
               <!--Text-->
               <p class="card-text">Kelola data ada pada menu pengaduan</p>
-              <a href="{{ URL::to('administrator/pengaduan/6') }}" type="button" class="btn btn-block btn-info" name="button">selengkapnya</a>
+              <a href="{{ URL::to('administrator/pengaduan/3') }}" type="button" class="btn btn-block btn-info" name="button">selengkapnya</a>
             </div>
             <!--/.Card content-->
 
@@ -102,7 +102,7 @@
 
       @endif
 
-      @if (Session::get('session')->level == "admin" || Session::get('session')->level == "transaksi energi")
+      @if (Session::get('session')->level == "cs" || Session::get('session')->level == "transaksi energi")
 
       <!--Fourth column-->
       <div class="col-lg-3 mb-1">
@@ -188,7 +188,7 @@
             </div>
             <!--Text-->
             <p class="card-text">Kelola data ada pada menu pengaduan</p>
-            <a href="{{ URL::to('administrator/pengaduan/3') }}" type="button" class="btn btn-block btn-info" name="button">selengkapnya</a>
+            <a href="{{ URL::to('administrator/pengaduan/6') }}" type="button" class="btn btn-block btn-info" name="button">selengkapnya</a>
           </div>
           <!--/.Card content-->
 

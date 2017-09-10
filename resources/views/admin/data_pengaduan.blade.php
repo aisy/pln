@@ -30,9 +30,10 @@
   </thead>
 
   <tbody>
+    {{--*/ $i=1 /*--}}
     @foreach ($data as $element)
       <tr>
-        <td>{{ $element['id'] }}</td>
+        <td>{{ $i }}</td>
         <td>{{ $element['nama_lengkap'] }}</td>
         <td>{{ $element['user_id'] }}</td>
         <td>{{ $element['alamat'] }}</td>
@@ -46,8 +47,9 @@
             {!! Form::close() !!}
           </td>
         </tr>
-      @endforeach
-    </tbody>
+    {{--*/ $i++; /*--}}
+    @endforeach
+  </tbody>
 
   </table>
 @endsection

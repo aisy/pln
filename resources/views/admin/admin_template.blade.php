@@ -51,7 +51,7 @@
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/2') }}" class="waves-effect">1.2 Penambahan Daya</a>
                                 </li>
-                                <li><a href="{{ URL::to('administrator/pengaduan/3') }}" class="waves-effect">1.3 LPB (Listrik pulsa prabayar)</a>
+                                <li><a href="{{ URL::to('administrator/pengaduan/3') }}" class="waves-effect">1.3 Tunggakan</a>
                                 </li>
 
                              @endif
@@ -61,7 +61,7 @@
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/5') }}" class="waves-effect">1.5 P2TL (Penerbitan pemakaian tunggakan tenaga listrik)</a>
                                 </li>
-                                <li><a href="{{ URL::to('administrator/pengaduan/6') }}" class="waves-effect">1.6 Tunggakan</a>
+                                 <li><a href="{{ URL::to('administrator/pengaduan/6') }}" class="waves-effect">1.6 LPB (Listrik pulsa prabayar)</a>
                                 </li>
                               @endif
 

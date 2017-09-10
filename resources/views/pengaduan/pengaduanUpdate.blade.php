@@ -39,17 +39,17 @@
                             <label for="form4">Alamat</label>
                         </div>
 
-                        @if($data->status=="sudah di verifikasi")
+                        {{--  @if($data->status=="sudah di verifikasi")  --}}
                              <div class="md-form">
                                 <textarea type="text" id="form5" name="verifikasi" class="md-textarea" placeholder="verifikasi">{{ $data->verifikasi }}</textarea>
                                 <label for="form5">Verifikasi</label>
                              </div> 
-                        @elseif($data->status=="sudah di tindak lanjut")
+                        {{--  @elseif($data->status=="sudah di tindak lanjut")  --}}
                              <div class="md-form">
                                 <textarea type="text" id="form5" name="tindak_lanjut" class="md-textarea" placeholder="tindak_lanjut">{{ $data->tindak_lanjut }}</textarea>
                                 <label for="form5">Tindak Lanjut</label>
                             </div>
-                        @endif
+                        {{--  @endif  --}}
 
 					</div>
 
