@@ -45,79 +45,86 @@
   @if($data->status=="sudah di tindak lanjut")
       <a href="{{ URL::to('administrator/ubah-pengaduan/'.$id) }}" class="btn btn-warning">Ubah</a>
   @else
-<form action="{{ URL::to('administrator/konf-pengaduan/proses') }}" method="POST">
-  <input name="_method" type="hidden" value="PATCH">
+  
+  @if($data->kategori_id == 3)
+  <form action="{{ URL::to('administrator/tunggakan') }}" method="POST">
+  @elseif($data->kategori_id!=3)
+  <form action="{{ URL::to('administrator/konf-pengaduan/proses') }}" method="POST">
+    <input name="_method" type="hidden" value="PATCH">
+  @endif
+  
   <input type="hidden" name="_token" value="{{csrf_token()}}" />
 
   <input type="hidden" name="id_pengaduan" value="{{ $id }}" />
 
       @if($data->status=="")
+      @if($data->kategori_id == 3)
+      <input type="hidden" name="pengaduan_id" value="{{ $id }}">
+
+          @if($data->keluhan=="keterlambatan bulan pembayaran")
+          <div id="bulan">
+            <select name="bulan" class="browser-default form-control">
+              <option value="">Berapa bulan</option>
+              
+              @for($i=1; $i<=5; $i++)
+                <option value="{{ $i }}">{{ $i }} Bulan</option>
+              @endfor
+              
+            </select>
+            
+            <select name="status_kwh" class="browser-default form-control">
+              <option value="">Status KWH</option>
+                <option value="KWH meter sudah di bongkar">KWH meter sudah di bongkar</option>
+                <option value="KWH meter belum di bongkar">KWH meter belum di bongkar</option>
+            </select>
+            
+            <select name="status_app" class="browser-default form-control">
+              <option value="">Status APP</option>
+              <option value="APP sudah di bongkar">APP sudah di bongkar</option>
+              <option value="APP belum di bongkar">APP belum di bongkar</option>
+            </select>
+          </div>
+          @else
+          <div id="pilihan">
+            <select name="pilihan" id="pilihan2" class="browser-default form-control">
+              <option value="">pilihan</option>
+              <option value="mutasi n">mutasi n</option>
+              <option value="belum termutasi">belum termutasi</option>
+            </select>
+          </div>
+          @endif
+
+          <div id="mutasin" style="display: none;">
+            <select name="mutasin" id="mutasin2" class="browser-default form-control">
+              <option value="">pilihan</option>
+              <option value="piutang ragu-ragu (prr)">piutang ragu-ragu (prr)</option>
+              <option value="penghapusan">penghapusan</option>
+            </select>
+          </div>
+
+          <div id="status" style="display: none;">
+            <select name="status" id="status2" class="browser-default form-control">
+              <option value="">status</option>
+              <option value="bayar">bayar</option>
+              <option value="belum bayar">belum bayar</option>
+            </select>
+          </div>
+
+          <div id="pilihan3" style="display: none;">
+            <select name="pilihan3" id="pilihan4" class="browser-default form-control">
+              <option value="">pilihan</option>
+              <option value="pasang baru">pasang baru</option>
+              <option value="belum pasang baru">belum pasang baru</option>
+            </select>
+          </div>
+      @endif
         <div class="md-form">
           <textarea type="text" name="verifikasi" class="md-textarea" placeholder="verifikasi"></textarea>
         </div>    
       <input type="hidden" name="status" value="sudah di verifikasi" />  
 
       @elseif($data->status=="sudah di verifikasi")
-        @if($data->kategori_id == 3)
-          <input type="hidden" name="pengaduan_id" value="{{ $id }}">
 
-              @if($data->keluhan=="keterlambatan bulan pembayaran")
-							<div id="bulan">
-								<select name="bulan" class="browser-default form-control">
-									<option value="">Berapa bulan</option>
-									
-									@for($i=1; $i<=5; $i++)
-										<option value="{{ $i }}">{{ $i }} Bulan</option>
-									@endfor
-									
-                </select>
-                
-                <select name="status_kwh" class="browser-default form-control">
-									<option value="">Status KWH</option>
-                    <option value="KWH meter sudah di bongkar">KWH meter sudah di bongkar</option>
-                    <option value="KWH meter belum di bongkar">KWH meter belum di bongkar</option>
-                </select>
-                
-                <select name="status_app" class="browser-default form-control">
-									<option value="">Status APP</option>
-                  <option value="APP sudah di bongkar">APP sudah di bongkar</option>
-                  <option value="APP belum di bongkar">APP belum di bongkar</option>
-								</select>
-							</div>
-              @else
-							<div id="pilihan">
-								<select name="pilihan" id="pilihan2" class="browser-default form-control">
-									<option value="">pilihan</option>
-									<option value="mutasi n">mutasi n</option>
-									<option value="belum termutasi">belum termutasi</option>
-								</select>
-							</div>
-              @endif
-
-							<div id="mutasin" style="display: none;">
-								<select name="mutasin" id="mutasin2" class="browser-default form-control">
-									<option value="">pilihan</option>
-									<option value="piutang ragu-ragu (prr)">piutang ragu-ragu (prr)</option>
-									<option value="penghapusan">penghapusan</option>
-								</select>
-							</div>
-
-							<div id="status" style="display: none;">
-								<select name="status" id="status2" class="browser-default form-control">
-									<option value="">status</option>
-									<option value="bayar">bayar</option>
-									<option value="belum bayar">belum bayar</option>
-								</select>
-							</div>
-
-							<div id="pilihan3" style="display: none;">
-								<select name="pilihan3" id="pilihan4" class="browser-default form-control">
-									<option value="">pilihan</option>
-									<option value="pasang baru">pasang baru</option>
-									<option value="belum pasang baru">belum pasang baru</option>
-								</select>
-							</div>
-          @endif
       <div class="md-form">
           <textarea type="text" name="tindak_lanjut" class="md-textarea" placeholder="tindak lanjut"></textarea>
       </div>

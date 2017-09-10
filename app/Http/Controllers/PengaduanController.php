@@ -79,9 +79,14 @@ class PengaduanController extends Controller
     {
         //
         $data = $request->all();
-        Pengaduan::create($data);
+        // Pengaduan::create($data);
+
+        $id= $request->input('id_pengaduan');
+
+        $patch  = $request->all();
+        $update = Pengaduan::find($id)->update($patch);
         Detail::create(array(
-          'id_pengaduan'   => $request->input('id_pengaduan'),
+          'pengaduan_id'   => $request->input('id_pengaduan'),
           'bulan'          => $request->input('bulan'),
           'status_mutasi'  => $request->input('pilihan'),
           'pilihan_mutasi' => $request->input('mutasin'),
