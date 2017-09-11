@@ -22,7 +22,7 @@ Route::resource('halaman-utama', 'HalamanUtamaController');
 Route::resource('pengaduan', 'PengaduanController');
 Route::get('pengaduan/menu/{id}', 'PengaduanController@form');
 Route::post('pengaduan/', 'PengaduanController@store');
-Route::post('pengaduan/tunggakan', 'PengaduanController@tunggakan');
+Route::post('pengaduan/tunggakan', 'PengaduanController@tunggakan2');
 
 // BERITA & KOMENTAR
 Route::resource('berita', 'BeritaController');

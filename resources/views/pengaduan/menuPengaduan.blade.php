@@ -6,7 +6,7 @@
 
  @section('section1')
 
-<section class="section">
+<section class="section text-xs-center center">
 
 	<h1>Pilih Pengaduan</h1>
 

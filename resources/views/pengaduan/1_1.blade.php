@@ -14,8 +14,12 @@
 
 	<div class="col-lg-12">
 		<!--Form-->
-		<form action="{{ URL::to('pengaduan/') }}" method="post">
 
+		@if($id == 3)
+  		<form action="{{ URL::to('pengaduan/tunggakan') }}" method="POST">
+		@else
+		<form action="{{ URL::to('pengaduan/') }}" method="post">
+		@endif
 			<input type="hidden" name="_token" value="{{csrf_token()}}" />
 
 			<div class="card wow fadeInLeft">
@@ -46,7 +50,7 @@
 
 						
 						<div class="md-form">
-							<select name="keluhan" class="mdb-select colorful-select dropdown-primary">
+							<select id="keluhan" name="keluhan" class="browser-default form-control">
 								<option value="">Keluhan</option>
 
 								@if ($kategori->id == 1)
@@ -82,6 +86,31 @@
 							</select>
 						</div>
 
+						<div id="bulan" style="display: none;">
+							<select name="bulan" class="browser-default form-control">
+								<option value="">Berapa bulan</option>
+								
+								@for($i=1; $i<=5; $i++)
+									<option value="{{ $i }}">{{ $i }} Bulan</option>
+								@endfor
+							</select>
+							
+						</div>
+
+						<div id="status" style="display: none;">
+							<select name="status_kwh" class="browser-default form-control">
+								<option value="">Status KWH</option>
+								<option value="KWH meter sudah di bongkar">KWH meter sudah di bongkar</option>
+								<option value="KWH meter belum di bongkar">KWH meter belum di bongkar</option>
+							</select>
+							
+							<select name="status_app" class="browser-default form-control">
+								<option value="">Status APP</option>
+								<option value="APP sudah di bongkar">APP sudah di bongkar</option>
+								<option value="APP belum di bongkar">APP belum di bongkar</option>
+							</select>
+						</div>
+
 					</div>
 
 
@@ -101,5 +130,13 @@
 	$(document).ready(function () {
 		$('.mdb-select').material_select();
 	});
+
+	//keluhan
+		document.getElementById('keluhan').addEventListener('change', function () {
+    		var style = this.value == "keterlambatan bulan pembayaran" ? 'block' : 'none';
+    		document.getElementById('bulan').style.display = style;
+			document.getElementById('status').style.display = style;
+
+		});
 </script>
 @endsection

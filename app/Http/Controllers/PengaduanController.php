@@ -112,6 +112,46 @@ class PengaduanController extends Controller
         return redirect('pengaduan');
     }
 
+    public function tunggakan2(Request $request)
+    {
+        //
+        $data = $request->all();
+        // Pengaduan::create($data);
+
+        $id= $request->input('id_pengaduan');
+
+        $patch  = $request->all();
+        $update = Pengaduan::create($patch);
+
+        Detail::create(array(
+          'pengaduan_id'   => $request->input('id_pengaduan'),
+          'bulan'          => $request->input('bulan'),
+          'status_kwh'     => $request->input('status_kwh'),
+          'status_app'     => $request->input('status_app'),
+          'status_mutasi'  => $request->input('pilihan'),
+          'pilihan_mutasi' => $request->input('mutasin'),
+          'status_bayar'   => $request->input('status'),  
+          'pilihan'        => $request->input('pilihan3')
+        ));
+    
+        // return redirect('pengaduan');
+
+        // $data =  $request->all();
+        // Layanan::create($data);
+
+        $data_antrian = count(Antrian::where('tgl_antrian',date('Y-m-d'))->get());
+        $no = $data_antrian+1;
+        Antrian::create([
+            "nomor_antrian" => $data_antrian+1,
+            "tgl_antrian"   => date('Y-m-d')
+        ]);
+
+
+        \Session::flash('flash_message','Nomor Antrian Anda Adalah '.$no);
+
+        return redirect('pengaduan');
+    }
+
     /**
      * Display the specified resource.
      *
