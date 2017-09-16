@@ -15,6 +15,7 @@
     <link href="{{ URL::to('bower_components/css/style.css') }}" rel="stylesheet">
     @yield('css')
 
+    <script src="{{ URL::to('bower_components/js/jquery-3.1.1.min.js') }}"></script>
 </head>
 
 <body class="fixed-sn mdb-skin">
@@ -46,7 +47,7 @@
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-flash"></i> Pengaduan<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                              @if (Session::get('session')->level == "admin" || Session::get('session')->level == "pelayanan pelanggan")
+                              @if (Session::get('session')->level == "cs" || Session::get('session')->level == "pelayanan pelanggan")
                                 <li><a href="{{ URL::to('administrator/pengaduan/1') }}" class="waves-effect">1.1 Pasang Baru</a>
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/2') }}" class="waves-effect">1.2 Penambahan Daya</a>
@@ -56,7 +57,7 @@
 
                              @endif
 
-                              @if (Session::get('session')->level == "admin" || Session::get('session')->level == "transaksi energi")
+                              @if (Session::get('session')->level == "cs" || Session::get('session')->level == "transaksi energi")
                                 <li><a href="{{ URL::to('administrator/pengaduan/4') }}" class="waves-effect">1.4 Baca Meter</a>
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/5') }}" class="waves-effect">1.5 P2TL (Penerbitan pemakaian tunggakan tenaga listrik)</a>
@@ -73,11 +74,13 @@
                         <i class="fa fa-newspaper-o"></i> Berita
                       </a>
                     </li>
+                    @if(Session::get('session')->level=='cs')
                     <li>
                       <a href=" {{ URL::to('administrator/antrian') }} " class="waves-effect arrow-r">
                         <i class="fa fa-list-ul"></i> Antrian
                       </a>
                     </li>
+                    @endif
                 </ul>
             </li>
             <!--/. Side navigation links -->
@@ -122,7 +125,7 @@
     <!--/Main layout-->
 
     <!-- SCRIPTS -->
-    <script src="{{ URL::to('bower_components/js/jquery-3.1.1.min.js') }}"></script>
+
     <script src="{{ URL::to('bower_components/js/tether.min.js') }}"></script>
     <script src="{{ URL::to('bower_components/js/bootstrap.js') }}"></script>
     <script src="{{ URL::to('bower_components/js/mdb.js') }}"></script>
