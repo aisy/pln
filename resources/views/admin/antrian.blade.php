@@ -25,7 +25,6 @@
           <td>{{ $element['tgl_antrian'] }}</td>
           {{--  <td>  --}}
             
-              
               <audio id="suarabel" src="{{ URL::to('sound/Airport_Bell.MP3') }}"  ></audio>
               <audio id="suarabelnomorurut" src="{{ URL::to('sound/nomor-urut.MP3') }}"  ></audio>
 
@@ -44,18 +43,19 @@
               {{--*/ $in= $j.",".$i  /*--}}
               @endfor
 
-              {{ $in }}
+              {{--  {{ $in }}  --}}
 
               <script type="text/javascript">
                 function mulai(){
 
                     // MAIN BEL PADA AWAL
-                    document.getElementById('suarabel').pause();
-                    document.getElementById('suarabel').currentTime=0;
-                    document.getElementById('suarabel').play();
+                    // document.getElementById('suarabel').pause();
+                    // document.getElementById('suarabel').currentTime=0;
+                    // document.getElementById('suarabel').play();
 
                     //SET DELAY UNTUK MEMAINKAN REKAMAN NOMOR URUT  
-                    totalwaktu=document.getElementById('suarabel').duration*1000;
+                    // totalwaktu=document.getElementById('suarabel').duration*1000;
+                    totalwaktu = 1;
 
                     //MAINKAN SUARA NOMOR URUT  
                     setTimeout(function() {
@@ -94,7 +94,7 @@
                     
                     {{--  KURANG DARI 20  --}}
                     @elseif($element['nomor_antrian']<20)
-                      setT6imeout(function() {
+                      setTimeout(function() {
                         document.getElementById('suarabel1').pause();
                         document.getElementById('suarabel1').currentTime=0;
                         document.getElementById('suarabel1').play();
@@ -137,6 +137,14 @@
                       }, totalwaktu);
                       totalwaktu=totalwaktu+1000;
                     @endif
+                    
+                    setTimeout(function() {
+                      document.getElementById('suarabel').pause();
+                      document.getElementById('suarabel').currentTime=0;
+                      document.getElementById('suarabel').play();
+                    }, totalwaktu);
+                    totalwaktu=totalwaktu+1000;
+
                 }
               </script>
           {{--  </td>  --}}
@@ -147,13 +155,14 @@
 
   </table>
 
-  <button type="button" onClick="mulai();" class="btn btn-sm btn-info">
-              <i class="fa fa-volume-up" aria-hidden="true"></i>
-            </button>
-            <button type="button" class="btn btn-sm btn-success">
-              <i class="fa fa-check" aria-hidden="true"></i>
-            </button>
-
+  <div class="center text-xs-center">
+    <button type="button" onClick="mulai();" class="btn btn-sm btn-info">
+      <i class="fa fa-volume-up" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="btn btn-sm btn-success">
+      <i class="fa fa-check" aria-hidden="true"></i>
+    </button>
+  </div>
   
 @endsection
 
@@ -162,14 +171,12 @@
   <script src="{{ URL::to('bower_components/datatables/media/js/dataTables.bootstrap4.js') }}"></script>
   <script type="text/javascript">
   $(document).ready(function(){
-    $('#dataTable').DataTable();
+    // $('#dataTable').DataTable();
 
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').focus()
     });  
   });
 
-
-  
   </script>
 @endsection

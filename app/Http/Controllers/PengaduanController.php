@@ -112,8 +112,7 @@ class PengaduanController extends Controller
         return redirect('pengaduan');
     }
 
-    public function tunggakan2(Request $request)
-    {
+    public function tunggakan2(Request $request){
         //
         $data = $request->all();
         // Pengaduan::create($data);
