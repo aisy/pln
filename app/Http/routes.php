@@ -66,6 +66,7 @@ Route::delete('administrator/berita-hapus/{id}', ['as'=>'berita.hapus_data.delet
 // BERITA
 
 // PENGADUAN
+Route::get('administrator/pengaduan/summary', 'PengaduanController@summary');
 Route::get('administrator/pengaduan/{id}', 'PengaduanController@data_pengaduan');
 Route::get('administrator/ubah-pengaduan/{id}', 'PengaduanController@edit');
 Route::get('administrator/konf-pengaduan/{id}', 'PengaduanController@konfirmasi');

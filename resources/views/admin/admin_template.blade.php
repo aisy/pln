@@ -44,6 +44,11 @@
                         <i class="fa fa-home"></i> Home
                       </a>
                     </li>
+                    <li>
+                      <a href=" {{ URL::to('administrator/pengaduan/summary') }} " class="waves-effect arrow-r">
+                        <i class="fa fa-list-ul"></i> Semua data pengaduan
+                      </a>
+                    </li>
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-flash"></i> Pengaduan<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
@@ -81,6 +86,8 @@
                       </a>
                     </li>
                     @endif
+
+                    
                 </ul>
             </li>
             <!--/. Side navigation links -->
