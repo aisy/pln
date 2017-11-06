@@ -112,6 +112,12 @@ class PengaduanController extends Controller
         return redirect('pengaduan');
     }
 
+    public function summary(){
+        $data = Pengaduan::all();
+        return View::make("admin/summary", compact('data'));
+    }
+
+
     public function tunggakan2(Request $request){
         //
         $data = $request->all();
