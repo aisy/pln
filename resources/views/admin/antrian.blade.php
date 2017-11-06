@@ -35,18 +35,18 @@
               <audio id="ratus" src="{{ URL::to('sound/ratus.MP3') }}"  ></audio>
               <audio id="ribu" src="{{ URL::to('sound/ribu.MP3') }}"  ></audio>
               <audio id="seratus" src="{{ URL::to('sound/seratus.MP3') }}"  ></audio>
-              <audio id="suarabelloket{{ $i }}" src="{{ URL::to('sound/'.$element['nomor_antrian'].'.MP3') }}"></audio>
+              <audio id="suarabelloket{{ $element['nomor_antrian'] }}" src="{{ URL::to('sound/'.$element['nomor_antrian'].'.MP3') }}"></audio>
 
               {{--*/ $long= strlen($element['nomor_antrian']) /*--}}
               @for($j=0;$j<$long;$j++)
-              <audio id="suarabel{{ $i.$j.$i }}" src="{{ URL::to('sound/'.substr($element['nomor_antrian'],$j,1)).'.MP3' }}" ></audio>      
+              <audio id="suarabel{{ $i.$j.$i }}" src="{{ URL::to('sound/'.substr($element['nomor_antrian'],$j,1)).'.MP3' }}" ></audio>
               {{--*/ $in= $j.",".$i  /*--}}
               @endfor
 
               {{ $in }}
 
               <script type="text/javascript">
-                function mulai(){
+                function mulai{{ $element['nomor_antrian']  }}(){
 
                     // MAIN BEL PADA AWAL
                     // document.getElementById('suarabel').pause();
@@ -68,9 +68,9 @@
                     // JIKA KURANG DARI 10
                     @if($element['nomor_antrian']<10)
                     setTimeout(function() {
-                      document.getElementById('suarabelloket{{ $i }}').pause();
-                      document.getElementById('suarabelloket{{ $i }}').currentTime=0;
-                      document.getElementById('suarabelloket{{ $i }}').play();
+                      document.getElementById('suarabelloket{{ $element['nomor_antrian'] }}').pause();
+                      document.getElementById('suarabelloket{{ $element['nomor_antrian'] }}').currentTime=0;
+                      document.getElementById('suarabelloket{{ $element['nomor_antrian'] }}').play();
                       }, totalwaktu);
                     totalwaktu=totalwaktu+1000;
 
@@ -95,9 +95,9 @@
                     {{--  KURANG DARI 20  --}}
                     @elseif($element['nomor_antrian']<20)
                       setTimeout(function() {
-                        document.getElementById('suarabel1{{ $i }}').pause();
-                        document.getElementById('suarabel1{{ $i }}').currentTime=0;
-                        document.getElementById('suarabel1{{ $i }}').play();
+                        document.getElementById('suarabelloket{{ substr($element['nomor_antrian'], 1, 1) }}').pause();
+                        document.getElementById('suarabelloket{{ substr($element['nomor_antrian'], 1, 1) }}').currentTime=0;
+                        document.getElementById('suarabelloket{{ substr($element['nomor_antrian'], 1, 1) }}').play();
                       }, totalwaktu);
                       totalwaktu=totalwaktu+1000;
                       setTimeout(function() {
@@ -149,7 +149,7 @@
               </script>
 
               <div class="center text-xs-center">
-              <button type="button" onClick="mulai();" class="btn btn-sm btn-info">
+              <button type="button" onClick="mulai{{ $element['nomor_antrian'] }}();" class="btn btn-sm btn-info">
                 <i class="fa fa-volume-up" aria-hidden="true"></i>
               </button>
               <button type="button" class="btn btn-sm btn-success" onClick="document.location.reload(true)" >
