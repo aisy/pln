@@ -54,6 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
+            'unix_socket'   => '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
             'host'      => env('DB_HOST', 'localhost'), //nama host
             'database'  => env('DB_DATABASE', 'pln'), //nama database
             'username'  => env('DB_USERNAME', 'root'), //username host
