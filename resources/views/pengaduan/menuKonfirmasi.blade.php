@@ -13,6 +13,11 @@
         <th>{{ $data->nama_lengkap }}</th>
     </tr>
     <tr>
+        <th>ID User</th>
+        <th>:</th>
+        <th>{{ $data->user_id }}</th>
+    </tr>
+    <tr>
         <th>Alamat</th>
         <th>:</th>
         <th>{{ $data->alamat }}</th>

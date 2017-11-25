@@ -12,7 +12,7 @@
         {{--  <th>#</th>  --}}
         <th>Nomor Antrian</th>
         <th>Tgl Antrian</th>
-        <th>opsi</th>
+        <!--<th>opsi</th>-->
       </tr>
     </thead>
 
@@ -37,13 +37,13 @@
               <audio id="seratus" src="{{ URL::to('sound/seratus.MP3') }}"  ></audio>
               <audio id="suarabelloket{{ $element['nomor_antrian'] }}" src="{{ URL::to('sound/'.$element['nomor_antrian'].'.MP3') }}"></audio>
 
-              {{--*/ $long= strlen($element['nomor_antrian']) /*--}}
+              <!--{{--*/ $long= strlen($element['nomor_antrian']) /*--}}
               @for($j=0;$j<$long;$j++)
               <audio id="suarabel{{ $i.$j.$i }}" src="{{ URL::to('sound/'.substr($element['nomor_antrian'],$j,1)).'.MP3' }}" ></audio>
               {{--*/ $in= $j.",".$i  /*--}}
               @endfor
 
-              {{ $in }}
+              {{ $in }}-->
 
               <script type="text/javascript">
                 function mulai{{ $element['nomor_antrian']  }}(){
@@ -152,9 +152,9 @@
               <button type="button" onClick="mulai{{ $element['nomor_antrian'] }}();" class="btn btn-sm btn-info">
                 <i class="fa fa-volume-up" aria-hidden="true"></i>
               </button>
-              <button type="button" class="btn btn-sm btn-success" onClick="document.location.reload(true)" >
+              <!--<button type="button" class="btn btn-sm btn-success" onClick="document.location.reload(true)" >
                 <i class="fa fa-long-arrow-right"></i> Selanjutnya
-              </button>
+              </button>-->
             </div>
           </td>
         </tr>
