@@ -1,6 +1,6 @@
 # pln
 
-> Web aplikasi sistem pengaduan layanan user kepada pihak pln di kota Malang, baik dalam urusan umum maupun teknikdi kota Malang.
+> Web aplikasi sistem pengaduan layanan user kepada pihak pln di kota Malang, baik dalam urusan umum maupun tekniksi di kota Malang.
 
 <br/>
 
