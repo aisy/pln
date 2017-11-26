@@ -65,10 +65,7 @@ php artisan cache:clear
 <br/>
 
 #### Memasang Database
-<!-- untuk migrasi di laravel cukup jalankan perintah seperti ini di terminal :
-```language
-php artisan migrate
-``` -->
+
 Untuk Memasang Database cuku buka phpmyadmin di Browser, lalu buat database bernama "pln" setelah itu import file database "pln.sql" dari folder yang di clone sebelumnya.
 
 #### Menggunakan Aplikasi 
