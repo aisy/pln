@@ -34,7 +34,7 @@
     {{--*/ $i=1 /*--}}
     @foreach ($data as $element)
       <tr>
-        <td>{{ $i }}</td>
+        <td></td>
         <td>{{ $element['nama_lengkap'] }}</td>
         <td>{{ $element['user_id'] }}</td>
         <td>{{ $element['alamat'] }}</td>
@@ -73,8 +73,21 @@
     //var table = $('#dataTable').DataTable();
 
       var table = $('#dataTable').DataTable({
+        "columnDefs": [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
+        "order": [[ 1, 'asc' ]],
         "dom": '<"toolbar">frtip'
       });
+
+      table.on( 'order.dt search.dt', function () {
+        table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+      } ).draw();
+
       $("div.toolbar").html('<input id="date_range" type="text" placeholder="Urutkan berdasarkan tanggal">');
       //END of the data table
 
