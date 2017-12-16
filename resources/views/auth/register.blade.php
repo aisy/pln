@@ -24,7 +24,7 @@
     <div>
         level
         <select class="" name="level">
-          <option value="admin">Admin</option>
+          <option value="customer service">Customer Service</option>
           <option value="pelayanan pelanggan">Pelayanan pelanggan</option>
           <option value="transaksi energi">Transaksi Energi</option>
         </select>

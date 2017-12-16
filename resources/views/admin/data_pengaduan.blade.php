@@ -25,6 +25,7 @@
       <th>Id User</th>
       <th>Alamat</th>
       <th>Tanggal</th>
+      <th>Status</th>
       <th>opsi</th>
     </tr>
   </thead>
@@ -37,7 +38,8 @@
         <td>{{ $element['nama_lengkap'] }}</td>
         <td>{{ $element['user_id'] }}</td>
         <td>{{ $element['alamat'] }}</td>
-        <td>{{ str_limit($element['created_at'], 10, '') }}
+        <td>{{ str_limit($element['created_at'], 10, '') }}</td>
+        <td>{{ $element['status'] }}</td>
           <td>
             <a href="{{ URL::to('administrator/konf-pengaduan/'.$element['id']) }}" class="btn btn-sm btn-success">
               <i class="fa fa-check"></i>

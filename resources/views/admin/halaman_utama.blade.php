@@ -7,7 +7,7 @@
     <!--First row-->
     <div class="row">
 
-      @if (Session::get('session')->level == "cs" || Session::get('session')->level == "pelayanan pelanggan")
+      @if (Session::get('session')->level == "customer service" || Session::get('session')->level == "pelayanan pelanggan")
         <!--First column-->
         <div class="col-lg-3 mb-1">
 
@@ -102,7 +102,7 @@
 
       @endif
 
-      @if (Session::get('session')->level == "cs" || Session::get('session')->level == "transaksi energi")
+      @if (Session::get('session')->level == "customer service" || Session::get('session')->level == "transaksi energi")
 
       <!--Fourth column-->
       <div class="col-lg-3 mb-1">

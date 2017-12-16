@@ -79,6 +79,7 @@ class PengaduanController extends Controller
     {
         //
         $data = $request->all();
+        print_r($data);
         // Pengaduan::create($data);
 
         $id= $request->input('id_pengaduan');
@@ -90,6 +91,7 @@ class PengaduanController extends Controller
           'bulan'          => $request->input('bulan'),
           'status_mutasi'  => $request->input('pilihan'),
           'pilihan_mutasi' => $request->input('mutasin'),
+          'lain_lain'      => $request->input('lain_lain'),
           'status_bayar'   => $request->input('status'),  
           'pilihan'        => $request->input('pilihan3')
         ));

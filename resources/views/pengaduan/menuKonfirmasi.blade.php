@@ -35,14 +35,7 @@
         <th>{{ $data->verifikasi }}</th>
       </tr> 
      @endif
-     @if($data->status=="sudah di tindak lanjut" || $data->tindak_lanjut!="")
-      {{--*/ $status = explode(" ", $data->status) /*--}}
-      <tr>
-        <th>Tindak lanjut</th> 
-        <th>:</th>
-        <th>{{ $data->tindak_lanjut }}</th>
-      </tr> 
-     @endif
+     
 </table>
 
 

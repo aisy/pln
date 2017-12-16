@@ -52,7 +52,7 @@
                     <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-flash"></i> Pengaduan<i class="fa fa-angle-down rotate-icon"></i></a>
                         <div class="collapsible-body">
                             <ul>
-                              @if (Session::get('session')->level == "cs" || Session::get('session')->level == "pelayanan pelanggan")
+                              @if (Session::get('session')->level == "customer service" || Session::get('session')->level == "pelayanan pelanggan")
                                 <li><a href="{{ URL::to('administrator/pengaduan/1') }}" class="waves-effect">1.1 Pasang Baru</a>
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/2') }}" class="waves-effect">1.2 Penambahan Daya</a>
@@ -62,7 +62,7 @@
 
                              @endif
 
-                              @if (Session::get('session')->level == "cs" || Session::get('session')->level == "transaksi energi")
+                              @if (Session::get('session')->level == "customer service" || Session::get('session')->level == "transaksi energi")
                                 <li><a href="{{ URL::to('administrator/pengaduan/4') }}" class="waves-effect">1.4 Baca Meter</a>
                                 </li>
                                 <li><a href="{{ URL::to('administrator/pengaduan/5') }}" class="waves-effect">1.5 P2TL (Penerbitan pemakaian tunggakan tenaga listrik)</a>
@@ -79,7 +79,7 @@
                         <i class="fa fa-newspaper-o"></i> Berita
                       </a>
                     </li>
-                    @if(Session::get('session')->level=='cs')
+                    @if(Session::get('session')->level=='customer service')
                     <li>
                       <a href=" {{ URL::to('administrator/antrian') }} " class="waves-effect arrow-r">
                         <i class="fa fa-list-ul"></i> Antrian

@@ -7,12 +7,13 @@
 @section('section1')
 
   <!-- Button trigger modal -->
+  @if (Session::get('session')->level == "customer service")
   <div class="center text-xs-center">
     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
       <i class="fa fa-plus-circle"></i> Tambah Berita
     </button>
   </div>
-
+  @endif
   <hr>
 
   <!-- Modal -->
