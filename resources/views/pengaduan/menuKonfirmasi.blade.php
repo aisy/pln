@@ -51,7 +51,7 @@
     <input name="_method" type="hidden" value="PATCH">
   @endif
   
-  <input type="hidden" name="_token" value="{{csrf_token()}}" />
+  <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
   <input type="hidden" name="id_pengaduan" value="{{ $id }}" />
 
@@ -61,26 +61,22 @@
 
           @if($data->keluhan=="keterlambatan bulan pembayaran")
           <div id="bulan">
-            <select name="bulan" class="browser-default form-control">
-              <option value="">Berapa bulan</option>
-              
-              @for($i=1; $i<=5; $i++)
-                <option value="{{ $i }}">{{ $i }} Bulan</option>
-              @endfor
-              
-            </select>
+
+            <div class="md-form">
+                <input name="bulan" value="{{ $detail->bulan }}" type="text" id="form6" class="form-control">
+                <label class="active" for="form6">Bulan</label>
+            </div>
+
+            <div class="md-form">
+                <input name="status_kwh" value="{{ $detail->status_kwh }}" type="text" id="form6" class="form-control">
+                <label class="active" for="form6">Status kwh</label>
+            </div>
+
+            <div class="md-form">
+                <input name="status_app" value="{{ $detail->status_app }}" type="text" id="form6" class="form-control">
+                <label class="active" for="form6">Status app</label>
+            </div>
             
-            <select name="status_kwh" class="browser-default form-control">
-              <option value="">Status KWH</option>
-                <option value="KWH meter sudah di bongkar">KWH meter sudah di bongkar</option>
-                <option value="KWH meter belum di bongkar">KWH meter belum di bongkar</option>
-            </select>
-            
-            <select name="status_app" class="browser-default form-control">
-              <option value="">Status APP</option>
-              <option value="APP sudah di bongkar">APP sudah di bongkar</option>
-              <option value="APP belum di bongkar">APP belum di bongkar</option>
-            </select>
           </div>
           @else
           <div id="pilihan">
@@ -119,21 +115,37 @@
         <div class="md-form">
           <textarea type="text" name="verifikasi" class="md-textarea" placeholder="verifikasi"></textarea>
         </div>    
-      <input type="hidden" name="status" value="sudah di verifikasi" />  
+      <input type="hidden" name="status" value="sudah di verifikasi" /> 
 
-      @elseif($data->status=="sudah di verifikasi")
+       <div class="text-xs-center">
+		    <button type="submit" class="btn btn-ins btn-lg">Simpan</button>
+	    </div> 
 
+      @elseif($data->status=="sudah di verifikasi" || $data->status=="di proses petugas")
+      @if(Session::get('session')->level == "customer service")
+          Data Verfikasi sudah di kirim, tunggu dari pihak pelayanan pelanggan atau transaksi energy yang bertindak lanjut
+      @else
       <div class="md-form">
-          <textarea type="text" name="tindak_lanjut" class="md-textarea" placeholder="tindak lanjut"></textarea>
+          <textarea type="text" id="tindaklanjut" name="tindak_lanjut" class="md-textarea">{{ $data->tindak_lanjut }}</textarea>
+          <label class="active" for="tindaklanjut"><strong>Jika awal menindak lanjutkan biarkan kosong</strong></label>
       </div>
+      <br>
+      <div class="md-form">
+          <textarea type="text" id="formpertugas" name="laporan_petugas" class="md-textarea" placeholder="Laporan petugas"></textarea>
+          <label class="active" for="formpetugas"><strong>Jika awal menindak lanjutkan biarkan kosong</strong></label>
+      </div>
+      <!-- <input type="hidden" name="status" value="sudah di tindak lanjut" /> -->
       <input type="hidden" name="status" value="sudah di tindak lanjut" />
+
+      <div class="text-xs-center">
+		    <button type="submit" class="btn btn-ins btn-lg">Simpan + pilih pegawai</button>
+	    </div> 
+      @endif
       @endif
 
 
 
-  <div class="text-xs-center">
-		<button type="submit" class="btn btn-ins btn-lg">Simpan</button>
-	</div>
+ 
 
 </form>
   @endif
