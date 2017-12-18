@@ -5,15 +5,10 @@
 <br/>
 
 #### Update Baru :
-1. Halaman User : 
-- Lain-lain sudah fix di setiap halaman
-2. Halaman Admin (semua): 
-    - admin pengaduan tidak keluar list sudah di benahi
-    - register admin error sudah di benahi
-    - berita yg bisa hanya CS sudah di benahi
-    - sorting data di summary dan data pengaduan sudah urut dari nomor urut 1 dan seterusnya
-3. Halaman admin (CS)
-    - menambah kolom status sudah selesai sudah di tambahkan
+Halaman Admin (semua): 
+   - fix menampilkan data di home 
+   - fi membedakan halaman per admin,
+   - menampilkan form keluhan petugas (fungsi belum jalan)
 
 #### Kebutuhan Perangkat Lunak :
 
