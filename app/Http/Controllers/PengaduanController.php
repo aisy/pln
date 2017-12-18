@@ -230,24 +230,28 @@ class PengaduanController extends Controller
     }
 
     public function konfirmasi(Request $request, $id){
-
         $data = Pengaduan::where('id', $id)->first();
+        $detail = Detail::where('pengaduan_id', $id)->first();
 
-        return View::make('pengaduan/menuKonfirmasi', compact('data','id'));
-        
+        return View::make('pengaduan/menuKonfirmasi', compact('data','id', 'detail'));
+    }
+
+    public function kirim_pegawai(){
+        # code...
     }
 
     public function prosesKonf(Request $request){
 
-         $id = $request->input('id_pengaduan');
-
-        //   echo $id;
-
+        $id = $request->input('id_pengaduan');
           // $data = Pengaduan::where('id', $id)->first();
 
-          $patch  = $request->all();
-          $update = Pengaduan::find($id)->update($patch);
-          return Redirect::back();
+        $patch  = $request->all();
+        $update = Pengaduan::find($id)->update($patch);
+
+        // if($request->input('status')=="di proses petugas"){
+        //     return Redirect::
+        // }
+        return Redirect::back();
     }
 
 }

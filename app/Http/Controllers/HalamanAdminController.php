@@ -23,7 +23,7 @@ class HalamanAdminController extends Controller
      */
     public function index(){
         //
-
+        
         $data1 = Pengaduan::where('kategori_id','1')->get();
         $data2 = Pengaduan::where('kategori_id','2')->get();
         $data3 = Pengaduan::where('kategori_id','3')->get();
