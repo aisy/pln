@@ -24,18 +24,18 @@
 						
                         @if($data->user_id!=1)    
 						<div class="md-form">
-							<input type="text" name="user_id" id="form2" class="form-control" value="{{ $data->user_id }}">
+							<input type="text" name="user_id" id="form2" class="form-control" value="{{ $data->user_id }}" disabled="disabled">
                             <label for="form2">ID Pelanggan</label>
                         </div>						
                         @endif
 
 						<div class="md-form">
-							<input type="text" name="nama_lengkap" id="form3" class="form-control" value="{{ $data->nama_lengkap }}">
+							<input type="text" name="nama_lengkap" id="form3" class="form-control" value="{{ $data->nama_lengkap }}" disabled="disabled">
                             <label for="form3">Nama Lengkap</label>
                         </div>
 
 						<div class="md-form">
-							<textarea type="text" id="form4" name="alamat" class="md-textarea">{{ $data->alamat }}</textarea>
+							<textarea type="text" id="form4" name="alamat" class="md-textarea" disabled="disabled">{{ $data->alamat }}</textarea>
                             <label for="form4">Alamat</label>
                         </div>
 
