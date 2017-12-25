@@ -12,5 +12,5 @@ class Pengaduan extends Model
     //field yang bisa di isi
     // protected $fillable = ['id_kategori', 'isi'];
     // protected $fillable = ['kategori_id','nama_lengkap','alamat','rt','rw','kelurahan','kecamatan','no_ktp','no_telp','layanan','peruntukan','daya'];
-    protected $fillable = ['kategori_id','nama_lengkap','user_id','alamat','keluhan','verifikasi','status','tindak_lanjut'];
+    protected $fillable = ['kategori_id','nama_lengkap','user_id','alamat','keluhan','lain_lain','verifikasi','status','tindak_lanjut'];
 }
